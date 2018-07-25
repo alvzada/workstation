@@ -1,0 +1,29 @@
+set number
+set tabstop=2
+set shiftwidth=2
+set background=dark
+set showmatch
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set nocompatible
+set autoindent
+"set background=light
+set showmatch
+
+" Text Wrapping
+set nowrap
+set linebreak
+set textwidth=0
+set showbreak=>\ \ \
+set colorcolumn=85
+
+" Tabs/Spaces
+set tabstop=4
+set softtabstop=2
+set shiftwidth=2
+"set shiftround
+set smarttab
+set expandtab
+
+

@@ -165,6 +165,13 @@ then
   export PATH=/usr/lib64/ccache:$PATH
 fi
 
+# Use rsync to copy/move files
+if [ -x "$(command -v rsync)" >/dev/null 2>&1 ];
+then
+    alias mv='rsync --remove-source-files --recursive -h --progress';
+    alias cp='rsync --recursive -h --progress';
+fi
+
 # VLC Wayland Fix
 if [ "$XDG_SESSION_TYPE" == "wayland" ];
 then

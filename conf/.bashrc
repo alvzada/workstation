@@ -156,7 +156,7 @@ man() {
 if [ -d "$HOME/.local/bin" ] && [ -d "$HOME/.local/lib64/" ] \
     && [ "$(command -v clear)" >/dev/null 2>&1 ]; 
 then
-    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/.local/bin \
+    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin \
         && export LD_LIBRARY_PATH=$HOME/.local/lib64/
 fi
 

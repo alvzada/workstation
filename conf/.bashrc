@@ -190,22 +190,23 @@ then
     alias vi='vim'
 fi
 
+if [ -x "$(command -v flatpak run org.gnu.emacs)" >/dev/null 2>&1 ];
+then
+        alias emacs='flatpak run org.gnu.emacs'
+fi
+
 # Default Editor
 if [ -x "$(command -v vim)" >/dev/null 2>&1 ];
 then
     export EDITOR='vim'
 elif [ -x "$(command -v emacs)" >/dev/null 2>&1 ];
 then
-    export EDITOR='emacs -nw'
+    export EDITOR='emacs -nw'; 
+    alias emacs='emacs -nw'
 else
     export EDITOR='vi'
 fi
 
-# Emacs in terminal mode
-if [ -x "$(command -v emacs)" >/dev/null 2>&1 ];
-then
-    alias emacs='emacs -nw'
-fi
 
 if [[ -r /etc/os-release ]]; then
     . /etc/os-release

@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ "$(command -v flatpak)" >/dev/null 2>&1 ];
 then
-    flatpak list --runtime;
+    flatpak list --runtime -d;
     echo "";
     read -p "Enter SDK/Runtime: " runtime;
     flatpak run \
@@ -10,7 +10,7 @@ then
         --device=all \
         --share=network \
         --share=ipc \
-        --socket=fallback-x11 \
+        --socket=x11 \
         --socket=wayland \
         --socket=pulseaudio \
         --socket=system-bus \

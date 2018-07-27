@@ -1,8 +1,8 @@
 " General Config
-let $VIM         = "$HOME"
-let $VIMRUNTIME  = "~/.vim/runtime"
-set runtimepath^=$VIMRUNTIME
-set helpfile=~/.vim/runtime/doc/help.txt
+"let $VIM         = "$HOME"
+"let $VIMRUNTIME  = "~/.vim/runtime"
+"set runtimepath^=$VIMRUNTIME
+"set helpfile=~/.vim/runtime/doc/help.txt
 set number
 set nocompatible
 set encoding=utf-8
@@ -55,7 +55,7 @@ set nowrap
 set linebreak
 set textwidth=0
 set showbreak=>\ \ \
-set colorcolumn=80
+set colorcolumn=132
 
 " Tabs/Spaces 
 set tabstop=2
@@ -95,5 +95,7 @@ let g:go_fmt_command = "goimports"
 set omnifunc=syntaxcomplete#Complete
 
 " Git gutter (Git diff)
-let g:gitgutter_enabled=-1
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
+if executable('git')
+  let g:gitgutter_enabled=-1
+  nnoremap <silent> <leader>d :GitGutterToggle<cr>
+endif

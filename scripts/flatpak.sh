@@ -8,7 +8,7 @@ then
         . /etc/os-release
         if [ $ID = debian ] || [ $ID = ubuntu ];
         then
-            sudo apt install flatpak;
+            sudo apt install flatpak flatpak-builder;
         else
             echo "Not on Debian based distros";
             echo "Use your package manager to install 'Flatpak'"

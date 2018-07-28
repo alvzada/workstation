@@ -190,11 +190,6 @@ then
     alias vi='vim'
 fi
 
-if [ -x "$(command -v flatpak run org.gnu.emacs)" >/dev/null 2>&1 ];
-then
-        alias emacs='flatpak run org.gnu.emacs'
-fi
-
 # Default Editor
 if [ -x "$(command -v vim)" >/dev/null 2>&1 ];
 then

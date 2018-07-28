@@ -1,11 +1,12 @@
 #!/bin/sh
 
-if [ -x "$(command -v flatpak)" >/dev/null 2>&1 ];
+if [ ! -x "$(command -v flatpak)" >/dev/null 2>&1 ];
 then
     echo "Setting up flatpak";
     if [ -r /etc/os-release ];
     then
         . /etc/os-release
+        export ID=Arch;
         if [ $ID = debian ] || [ $ID = ubuntu ];
         then
             sudo apt install flatpak;
@@ -14,6 +15,7 @@ then
             echo "Use your package manager to install 'Flatpak'"
         fi
     fi
+    exit;
 
     RET=1;
     until [ ${RET} -eq 0 ]; do

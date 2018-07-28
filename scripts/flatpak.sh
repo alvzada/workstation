@@ -6,7 +6,6 @@ then
     if [ -r /etc/os-release ];
     then
         . /etc/os-release
-        export ID=Arch;
         if [ $ID = debian ] || [ $ID = ubuntu ];
         then
             sudo apt install flatpak;

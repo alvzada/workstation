@@ -12,9 +12,9 @@ then
         else
             echo "Not on Debian based distros";
             echo "Use your package manager to install 'Flatpak'"
+            exit;
         fi
     fi
-    exit;
 
     RET=1;
     until [ ${RET} -eq 0 ]; do

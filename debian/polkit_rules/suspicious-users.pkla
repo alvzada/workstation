@@ -1,0 +1,6 @@
+[Exclude Some Problematic Users]
+Identity=unix-user:homer;unix-user:grimes
+Action=com.example.awesomeproduct.*
+ResultAny=no
+ResultInactive=no
+ResultActive=auth_admin

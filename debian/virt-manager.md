@@ -8,7 +8,8 @@ $ sudo apt-get --no-install-recommends install \
   libvirt-daemon-system \
   virt-manager \
   gir1.2-spice-client-gtk-3.0 \
-  qemu-utils
+  qemu-utils \
+  ebtables
 ```
 - **Proper permissions**
 ```bash

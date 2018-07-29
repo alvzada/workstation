@@ -99,6 +99,10 @@ fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+if [ "$(command -v clang)" >/dev/null 2>&1 ];
+then
+    alias clang='clang -fcolor-diagnostics -Weverything'
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -163,13 +167,6 @@ fi
 if [ -x "$(command -v ccache)" 2>&1 >/dev/null ];
 then
   export PATH=/usr/lib64/ccache:$PATH
-fi
-
-# Use rsync to copy/move files
-if [ -x "$(command -v rsync)" >/dev/null 2>&1 ];
-then
-    alias mv='rsync --remove-source-files --recursive -h --progress';
-    alias cp='rsync --recursive -h --progress';
 fi
 
 # VLC Wayland Fix
@@ -283,7 +280,10 @@ SUDO_PS1="\[\e[0;33m\]\u\[\e[0m\]\[\e[0;36m\]@\[\e[m\]\[\e[36m\]\h\[\e[0m\]\[\e[
 #alias dmesg="dmesg -T|sed -e 's|\(^.*'`date +%Y`']\)\(.*\)|\x1b[0;34m\1\x1b[0m - \2|g'"
 
 # Notification Popups (manual)
-alias notify='notify-send --urgency=low -i "$([ $? = 0 ] && (echo terminal; exit 0) || (echo error; exit 1))" "$([ $? = 0 ] && echo Task finished || echo Something went wrong!)" "$(history | sed -n "\$s/^\s*[0-9]\+\s*\(.*\)[;&|]\s*notify\$/\1/p")"'
+if [ -c "$(command -v notify-send)" >/dev/null 2>&1 ];
+then
+    alias notify='notify-send --urgency=low -i "$([ $? = 0 ] && (echo terminal; exit 0) || (echo error; exit 1))" "$([ $? = 0 ] && echo Task finished || echo Something went wrong!)" "$(history | sed -n "\$s/^\s*[0-9]\+\s*\(.*\)[;&|]\s*notify\$/\1/p")"'
+fi
 
 # youtube-dl title name fix
 if [ "$(command -v youtube-dl)" >/dev/null 2>&1 ];

@@ -285,4 +285,4 @@ Domain Management (help keyword 'domain')
 ```bash
 $ sudo ip link set dev virbr0 down && sudo brctl delbr virbr0
 ```
-for more on, libvirt, visit: https://wiki.libvirt.org/page/Networking
+for more on libvirt" visit: https://wiki.libvirt.org/page/Networking

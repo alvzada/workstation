@@ -17,7 +17,7 @@ $ sudo adduser <youruser> libvirt-qemu
 ```
 - **List domains**
 ```bash
-$ sudo virsh list --all
+$ sudo virsh list --all   //sudo is not required if user belongs to libvirt group
 ```
 - **More on domain management**
 ```manpage

@@ -20,7 +20,7 @@ $ sudo adduser <youruser> libvirt-qemu
 $ sudo virsh list --all
 ```
 - **More on domain management**
-```bash
+```manpage
 Domain Management (help keyword 'domain')
     attach-device                  attach device from an XML file
     attach-disk                    attach disk device

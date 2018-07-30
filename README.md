@@ -1,7 +1,7 @@
 # Desktop
 
+![desktop](/images/desktop.png)
 ![workstation](/images/Linux.png)
-!(desktop)(/images/desktop.png)
 
 
 

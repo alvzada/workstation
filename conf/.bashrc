@@ -212,14 +212,10 @@ fi
 # if not installed
 if [[ -r /etc/os-release ]]; then
     . /etc/os-release
-    if [[ $ID = ubuntu ]] && [ -x "$(command -v mpv)" >/dev/null 2>&1 ] \
+    if [[ $ID = debian ]] && [ -x "$(command -v mpv)" >/dev/null 2>&1 ] \
         && [ ! -e "/usr/bin/mpv" ];
     then
-        alias mpv='mpv-fallback'
-    elif [[ $ID = fedora ]] && [ -x "$(command -v mpv)" >/dev/null 2>&1 ] \
-        && [ ! -e "/usr/bin/mpv" ];
-    then
-        alias mpv='mpv --gpu-context=x11'
+        alias mpv='mpv'
     fi
 fi
 

@@ -12,7 +12,7 @@ esac
 
 if [ "$(find . -name '*.c' | cut -d '/' -f2)" >/dev/null 2>&1 ];
 then
-    if [ -x "$(command -v clang)" >/dev/null 2>&1 ];
+    if [ -x "$(command -v clang-format)" >/dev/null 2>&1 ];
     then
         clang-format -style=google -i $(find . -name "*.c" | cut -d "/" -f 2);
         echo "Done clang formatting!";

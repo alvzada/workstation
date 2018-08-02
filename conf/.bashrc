@@ -208,17 +208,6 @@ if [[ -r /etc/os-release ]]; then
     fi
 fi
 
-# MPV loads up from ~/.local ELF shared lib64 rather than official location
-# if not installed
-if [[ -r /etc/os-release ]]; then
-    . /etc/os-release
-    if [[ $ID = debian ]] && [ -x "$(command -v mpv)" >/dev/null 2>&1 ] \
-        && [ ! -e "/usr/bin/mpv" ];
-    then
-        alias mpv='mpv'
-    fi
-fi
-
 # setting Qt5 uniform look for GTK+
 export QT_QPA_PLATFORMTHEME=gtk2
 

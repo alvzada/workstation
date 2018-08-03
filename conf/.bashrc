@@ -124,6 +124,8 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias rm='rm -v'
+alias cp='cp -v'
 
 # enable programmable completion features
 if ! shopt -oq posix; then

@@ -10,7 +10,7 @@ then
         then
             sudo apt install flatpak flatpak-builder;
         else
-            echo "\e[36mNot on Debian based distros\e[0m";
+            echo "\e[35mNot on Debian based distros\e[0m";
             echo "Use your package manager to install 'Flatpak'"
             exit;
         fi

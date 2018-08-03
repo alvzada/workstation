@@ -22,7 +22,7 @@ if [ -x "$(command -v ffmpeg)" ]; then
     echo -e "\e[36mStarting conversion...\e[0m"
     sleep 5;
     for name in *.mp3
-        do ffmpeg  -i "$name" -c:a libopus "${name%.mp3}".opus
+        do ffmpeg  -i "$name" -c:a libopus "${name%.mp3}".ogg
     done
 fi
 

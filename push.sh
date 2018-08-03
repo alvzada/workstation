@@ -2,7 +2,8 @@
 
 if [ -x "$(command -v git)" > /dev/null ];
 then
-  git add .; git commit -m "random"; git push -uv origin master
+  read -p "Enter commit message: " message;
+  git add .; git commit -m "$message"; git push -uv origin master
 else
   echo "'git' not installed"
 fi

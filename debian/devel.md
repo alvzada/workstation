@@ -13,6 +13,7 @@ sudo apt-get --no-install-recommends install \
     zlib1g-dev \
     valac \
     valgrind \
-    meson \
+    cmake \
+    ninja-build 
     vim
 ```

@@ -15,5 +15,5 @@ sudo apt-get --no-install-recommends install \
     valgrind \
     cmake \
     vim-python-jedi \
-    vim
+    vim-nox
 ```

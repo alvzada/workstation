@@ -10,7 +10,7 @@ then
     read -p "[y/N]: " choice;
     case $choice in
       y|Y) git log --full-diff;;
-      n|N) echo "Okey, good!"; exit;;
+      n|N) echo "\e[35mOkey, All good!\e[0m"; exit;;
       *) echo "\e[35mYou may drunk now!\e[0m";;
     esac
 else

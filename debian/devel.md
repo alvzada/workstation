@@ -14,6 +14,6 @@ sudo apt-get --no-install-recommends install \
     valac \
     valgrind \
     cmake \
-    ninja-build 
+    vim-python-jedi \
     vim
 ```

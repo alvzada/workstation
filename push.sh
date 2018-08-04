@@ -5,8 +5,9 @@ then
     git add .;
     git checkout;
     read -p "Enter commit message: " message;
-    git commit -m "$message"; git push -uv origin master; 
-    read -p "\e[32mWanna see creepy logs? [y/N]:\e[0m " choice
+    git commit -m "$message"; git push -uv origin master;
+    echo "\e[36mWanna see creepy logs? [y/N]\e[0m: "; 
+    read choice;
     case $choice in
       y|Y) git log --full-diff;;
       n|N) exit;;

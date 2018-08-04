@@ -99,7 +99,7 @@ fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-if [ "$(command -v clang)" >/dev/null 2>&1 ] && [ "$(command -v clang++)" >/dev/null 2>&1 ] ;
+if [ -x "$(command -v clang)" >/dev/null 2>&1 ] && [ "$(command -v clang++)" >/dev/null 2>&1 ] ;
 then
     alias clang='clang -fcolor-diagnostics -Weverything';
     alias clang++='clang++ -fcolor-diagnostics -Weverything';
@@ -164,11 +164,9 @@ man() {
 
 # User specific environment and startup programs
 
-if [ -d "$HOME/.local/bin" ] && [ -d "$HOME/.local/lib64/" ] \
-    && [ "$(command -v clear)" >/dev/null 2>&1 ]; 
+if [ -d "$HOME/.local/bin" ] && [ "$(command -v clear)" >/dev/null 2>&1 ];
 then
-    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin \
-        && export LD_LIBRARY_PATH=$HOME/.local/lib64/
+    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin
 fi
 
 if [ -x "$(command -v ccache)" 2>&1 >/dev/null ];
@@ -206,19 +204,29 @@ else
     export EDITOR='vi'
 fi
 
-
+# Distribution specific custom aliases
 if [[ -r /etc/os-release ]]; then
     . /etc/os-release
     if [[ $ID = arch ]];
     then
         alias news="curl -s https://www.archlinux.org/feeds/news/ | xmllint --xpath //item/title\ \|\ //item/pubDate /dev/stdin | sed -r -e 's:<title>([^<]*?)</title><pubDate>([^<]*?)</pubDate>:\2\t\1\n:g'"
+    elif [[ $ID = debian ]] || [[ $ID = fedora ]] ;
+    then
+        alias poweroff='systemctl poweroff';
+        alias reboot='systemctl reboot';
+        alias suspend='systemctl suspend';
     fi
 fi
+    
+if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ];
+then
+    alias logout-session='gnome-session-quit --logout --force --no-prompt';
+fi
 
-# setting Qt5 uniform look for GTK+
+# Setting Qt5 uniform look for GTK+
 export QT_QPA_PLATFORMTHEME=gtk2
 
-# git support in bash
+# Git support in bash
 function parse_git_branch() {
     BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
     if [ ! "${BRANCH}" == "" ]
@@ -272,13 +280,13 @@ SUDO_PS1="\[\e[0;33m\]\u\[\e[0m\]\[\e[0;36m\]@\[\e[m\]\[\e[36m\]\h\[\e[0m\]\[\e[
 #alias dmesg="dmesg -T|sed -e 's|\(^.*'`date +%Y`']\)\(.*\)|\x1b[0;34m\1\x1b[0m - \2|g'"
 
 # Notification Popups (manual)
-if [ -c "$(command -v notify-send)" >/dev/null 2>&1 ];
+if [ -x "$(command -v notify-send)" >/dev/null 2>&1 ];
 then
     alias notify='notify-send --urgency=low -i "$([ $? = 0 ] && (echo terminal; exit 0) || (echo error; exit 1))" "$([ $? = 0 ] && echo Task finished || echo Something went wrong!)" "$(history | sed -n "\$s/^\s*[0-9]\+\s*\(.*\)[;&|]\s*notify\$/\1/p")"'
 fi
 
 # youtube-dl title name fix
-if [ "$(command -v youtube-dl)" >/dev/null 2>&1 ];
+if [ -x "$(command -v youtube-dl)" >/dev/null 2>&1 ];
 then
     alias youtube-dl="youtube-dl -o '%(title)s.%(ext)s'"
 fi

@@ -6,7 +6,6 @@ sudo apt-get --no-install-recommends install \
     automake \
     clang \
     clang-format \
-    clang-tools \
     llvm \
     llvm-dev \
     llvm-runtime \
@@ -22,4 +21,6 @@ sudo apt-get --no-install-recommends install \
     virtualenv \
     vim-python-jedi \
     vim-nox
+    git
+    default-jdk
 ```

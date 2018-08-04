@@ -17,7 +17,7 @@ sudo apt-get --no-install-recommends install \
     gdb \
     valgrind \
     cmake \
-    python3
+    python3 \
     python3-pip \
     virtualenv \
     vim-python-jedi \

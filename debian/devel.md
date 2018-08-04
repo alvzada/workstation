@@ -14,13 +14,16 @@ sudo apt-get --no-install-recommends install \
     python3-jedi \
     zlib1g-dev \
     valac \
+    gdb \
     valgrind \
     cmake \
     python3
     python3-pip \
     virtualenv \
     vim-python-jedi \
-    vim-nox
-    git
-    default-jdk
+    vim-nox \
+    git \
+    default-jdk \
+    default-jre \
+    yasm
 ```

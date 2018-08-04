@@ -17,6 +17,9 @@ sudo apt-get --no-install-recommends install \
     valac \
     valgrind \
     cmake \
+    python3
+    python3-pip \
+    virtualenv \
     vim-python-jedi \
     vim-nox
 ```

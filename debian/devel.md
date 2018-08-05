@@ -1,5 +1,7 @@
 ## Development setup
 
+- Debian based systems:
+
 ```bash
 sudo apt-get --no-install-recommends install \
     autoconf \
@@ -27,6 +29,31 @@ sudo apt-get --no-install-recommends install \
     default-jre \
     yasm
 ```
+- Redhat/Fedora systems:
+
+```
+sudo dnf --setopt=install_weak_deps=False --best install \
+clang \
+automake \
+autoconf \
+llvm \
+splint \
+pkgconf-pkg-config \
+python3-jedi \
+vala \
+gdb \
+valgrind \
+cmake \
+python3-pip \
+python3-virtualenv \
+vim-jedi \
+vim-omnicppcomplete \
+vim-enhanced \
+git \
+java-openjdk \
+yasm
+```
+
 ## Flatpak Development setup
 ```bash
 #!/bin/sh
@@ -40,8 +67,10 @@ then
         if [ $ID = debian ] || [ $ID = ubuntu ];
         then
             sudo apt install flatpak flatpak-builder;
+        elif
+            sudo dnf install flatpak flatpak-builder;
         else
-            echo "Not on Debian based distros";
+            echo "Not on Deb/RPM based distros";
             echo "Use your package manager to install 'Flatpak'"
             exit;
         fi

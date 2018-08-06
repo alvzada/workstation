@@ -101,12 +101,8 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 if [ -x "$(command -v clang)" >/dev/null 2>&1 ] && [ "$(command -v clang++)" >/dev/null 2>&1 ] ;
 then
-    alias clang='clang -fcolor-diagnostics -Weverything';
-    alias clang++='clang++ -fcolor-diagnostics -Weverything';
-    alias cc='cc -fcolor-diagnostics -Weverything';
-    alias c++='c++ -fcolor-diagnostics -Weverything';
-
-
+    alias cc='clang';
+    alias c++='clang++';
 fi
 
 # enable color support of ls and also add handy aliases

@@ -17,7 +17,7 @@ sudo apt-get --no-install-recommends install \
     zlib1g-dev \
     valac \
     gdb \
-    valgrind \
+    valgrind-dbg \
     cmake \
     python3 \
     python3-pip \
@@ -28,6 +28,10 @@ sudo apt-get --no-install-recommends install \
     default-jdk \
     default-jre \
     yasm
+    tmux
+    make
+    patch
+    rsync
 ```
 - Redhat/Fedora systems:
 

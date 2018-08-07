@@ -163,6 +163,8 @@ man() {
 if [ -d "$HOME/.local/bin" ] && [ "$(command -v clear)" >/dev/null 2>&1 ];
 then
     export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin
+else
+    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME
 fi
 
 if [ -x "$(command -v ccache)" 2>&1 >/dev/null ];

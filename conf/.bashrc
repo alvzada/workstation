@@ -167,9 +167,14 @@ else
     export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME
 fi
 
-if [ -x "$(command -v ccache)" 2>&1 >/dev/null ];
+if [ -x "$(command -v ccache)" >/dev/null 2>&1 ];
 then
-  export PATH=/usr/lib64/ccache:$PATH
+  export PATH=/usr/lib/ccache:$PATH
+fi
+
+if [ -x "$(command -v ffmpeg)" >/dev/null 2>&1 ];
+then
+    alias ffmpeg='ffmpeg -loglevel warning -stats';
 fi
 
 # VLC Wayland Fix

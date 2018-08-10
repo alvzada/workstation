@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -x "$(command -v git)" > /dev/null ];
 then

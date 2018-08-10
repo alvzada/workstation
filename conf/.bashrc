@@ -160,7 +160,7 @@ man() {
 
 # User specific environment and startup programs
 
-if [ -d "$HOME/.local/bin" ] && [ "$(command -v clear)" >/dev/null 2>&1 ];
+if [ -d "$HOME/.local/bin" ];
 then
     export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin
 else

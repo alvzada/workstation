@@ -10,7 +10,7 @@ then
         then
             sudo apt install flatpak flatpak-builder;
         else
-            echo "\e[35mNot on Debian based distros\e[0m";
+            echo -e "\e[35mNot on Debian based distros\e[0m";
             echo "Use your package manager to install 'Flatpak'"
             exit;
         fi
@@ -26,6 +26,6 @@ then
         RET=$?;
     done;
 else
-    echo "\e[32mFlatpak already installed\e[0m";
+    echo -e "\e[32mFlatpak already installed\e[0m";
 fi
 

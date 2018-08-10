@@ -174,7 +174,10 @@ fi
 
 if [ -x "$(command -v ffmpeg)" >/dev/null 2>&1 ];
 then
-    alias ffmpeg='ffmpeg -loglevel warning -stats';
+    alias ffmpeg='ffmpeg \
+        -loglevel warning \
+        -loglevel info \
+        -stats';
 fi
 
 # VLC Wayland Fix

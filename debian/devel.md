@@ -31,7 +31,11 @@ sudo apt-get --no-install-recommends install \
     tmux
     make
     patch
+    ccache
     rsync
+    devscripts
+    equivs
+    libnotify-bin
 ```
 - Redhat/Fedora systems:
 

@@ -9,7 +9,6 @@ sudo apt-get --no-install-recommends install \
     clang \
     clang-format \
     llvm \
-    llvm-dev \
     llvm-runtime \
     splint \
     pkg-config \
@@ -21,6 +20,8 @@ sudo apt-get --no-install-recommends install \
     cmake \
     python3 \
     python3-pip \
+    python3-wheel \
+    python3-setuptools \
     virtualenv \
     vim-python-jedi \
     vim-nox \

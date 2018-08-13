@@ -3,7 +3,6 @@ sudo apt-get --no-install-recommends install \
     clang \
     valac \
     llvm \
-    llvm-dev \
     automake \
     autoconf \
     valgrind \
@@ -11,6 +10,10 @@ sudo apt-get --no-install-recommends install \
     devscripts \
     libnotify-bin \
     ccache \
+    python3-pip \
+    python3-wheel \
+    python3-setuptools \
     patch \
-    make
+    make \
+    libnotify-bin
     

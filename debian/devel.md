@@ -28,14 +28,14 @@ sudo apt-get --no-install-recommends install \
     git \
     default-jdk \
     default-jre \
-    yasm
-    tmux
-    make
-    patch
-    ccache
-    rsync
-    devscripts
-    equivs
+    yasm \
+    tmux \
+    make \
+    patch \
+    ccache \
+    rsync \
+    devscripts \
+    equivs \
     libnotify-bin
 ```
 - Redhat/Fedora systems:

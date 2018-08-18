@@ -1,5 +1,5 @@
 ﻿# Desktop
 
-![desktop](/images/desktop2.png)
+![desktop](/images/bsd-unix.png)
 
 

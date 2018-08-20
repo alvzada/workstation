@@ -1,8 +1,9 @@
 ﻿# Desktop
 
-![desktop](/images/bsd-unix.png)
+![Xfce](/images/xfce4.png)
+![i3](/images/i3-wm.png)
 
-## Setup
+# Setup (Debian)
 
 ```bash
 #!/bin/bash

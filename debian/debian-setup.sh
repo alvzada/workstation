@@ -1,10 +1,3 @@
-﻿# Desktop
-
-![desktop](/images/bsd-unix.png)
-
-## Setup
-
-```bash
 #!/bin/bash
 
 if [[ "$EUID" -ne 0 ]];
@@ -192,5 +185,3 @@ update-grub && update-initramfs -uv;
 sleep 2;
 
 echo "All set up, please reboot!"
-
-```

@@ -95,8 +95,8 @@
     </property>
   </property>
   <property name="last" type="empty">
-    <property name="window-width" type="int" value="638"/>
-    <property name="window-height" type="int" value="556"/>
+    <property name="window-width" type="int" value="650"/>
+    <property name="window-height" type="int" value="563"/>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="file-icons" type="empty">

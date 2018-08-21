@@ -19,6 +19,7 @@
         <value type="int" value="17"/>
         <value type="int" value="2"/>
         <value type="int" value="16"/>
+        <value type="int" value="12"/>
       </property>
     </property>
     <property name="panel-2" type="empty">
@@ -31,6 +32,7 @@
         <value type="int" value="11"/>
         <value type="int" value="10"/>
         <value type="int" value="20"/>
+        <value type="int" value="5"/>
         <value type="int" value="9"/>
         <value type="int" value="13"/>
         <value type="int" value="19"/>
@@ -121,6 +123,14 @@
       <property name="items" type="array">
         <value type="string" value="15347814964.desktop"/>
       </property>
+    </property>
+    <property name="plugin-5" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15348330831.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
   </property>
 </channel>

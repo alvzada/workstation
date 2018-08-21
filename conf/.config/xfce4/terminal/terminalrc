@@ -34,7 +34,8 @@ ColorCursor=#e0e0e0e0e0e0
 ColorBold=#93a1a1
 ColorBoldUseDefault=FALSE
 TabActivityColor=#dc322f
-CommandLoginShell=TRUE
 ScrollingUnlimited=TRUE
 ScrollingOnOutput=FALSE
+CommandLoginShell=TRUE
+Encoding=UTF-8
 

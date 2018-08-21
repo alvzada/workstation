@@ -188,9 +188,10 @@ then
 fi
 
 # tmux color fix
-if [ "$TERM" == "xterm-256color" ];
+if [ "$TERM" == "xterm-256color" ] && [ -x "$(command -v tmux)" >/dev/null 2>&1 ];
 then
-    export TERM=xterm-256color
+    export TERM=xterm-256color;
+    alias tmux='tmux -2 -u';
 fi
 
 # Vi executes vim (if vim exists)
@@ -200,13 +201,10 @@ then
 fi
 
 # Default Editor
-if [ -x "$(command -v vim)" >/dev/null 2>&1 ];
-then
-    export EDITOR='vim'
-elif [ -x "$(command -v emacs)" >/dev/null 2>&1 ];
+if [ -x "$(command -v emacs)" >/dev/null 2>&1 ];
 then
     export EDITOR='emacs -nw'; 
-    alias emacs='emacs -nw'
+    alias emacs='emacs -nw';
 else
     export EDITOR='vi'
 fi

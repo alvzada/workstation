@@ -69,6 +69,7 @@
       <property name="names-visible" type="array">
         <value type="string" value="orage"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="thunar"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="showdesktop"/>

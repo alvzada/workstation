@@ -188,15 +188,21 @@ then
 fi
 
 # tmux color fix
-if [ "$TERM" == "xterm-256color" ] && [ -x "$(command -v tmux)" >/dev/null 2>&1 ];
+if [ "$TERM" == "xterm-256color" ] || [ "$TERM" == "rxvt-unicode-256color" ];
 then
     export TERM=xterm-256color;
+fi
+
+if [ -x "$(command -v tmux)" >/dev/null 2>&1 ];
+then
     alias tmux='tmux -2 -u';
 fi
+
 
 # Vi executes vim (if vim exists)
 if [ -x "$(command -v vim)" >/dev/null 2>&1 ];
 then
+    export EDITOR='vim'; 
     alias vi='vim'
 fi
 

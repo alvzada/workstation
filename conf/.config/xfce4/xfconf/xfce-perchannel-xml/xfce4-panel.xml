@@ -21,6 +21,16 @@
         <value type="int" value="16"/>
         <value type="int" value="12"/>
       </property>
+      <property name="background-alpha" type="uint" value="63"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="62451"/>
+        <value type="uint" value="59881"/>
+        <value type="uint" value="56797"/>
+        <value type="uint" value="65535"/>
+      </property>
+      <property name="enter-opacity" type="uint" value="95"/>
+      <property name="leave-opacity" type="uint" value="95"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="position" type="string" value="p=10;x=0;y=0"/>
@@ -42,6 +52,14 @@
       <property name="size" type="uint" value="55"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="background-alpha" type="uint" value="90"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="52942"/>
+        <value type="uint" value="52942"/>
+        <value type="uint" value="52942"/>
+        <value type="uint" value="65535"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">

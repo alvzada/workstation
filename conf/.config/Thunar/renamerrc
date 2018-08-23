@@ -1,0 +1,10 @@
+[Configuration]
+LastActiveMode=THUNAR_RENAMER_MODE_BOTH
+LastActiveRenamer=ThunarSbrReplaceRenamer
+
+[ThunarSbrReplaceRenamer]
+Regexp=TRUE
+Replacement=sh
+CaseSensitive=FALSE
+Pattern=txt
+

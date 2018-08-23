@@ -1,94 +1,320 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+zstyle ':completion:*' completer _complete _correct _approximate 
+zstyle ':completion:*' max-errors 3 numeric 
+zstyle ':completion:*' prompt '$' 
+zstyle :compinstall filename '/home/$USER/.zshrc'
+# autoload -U compinit 
+# compinit 
+autoload -U zfinit #This is for the built in ftp client 
+HISTSIZE=50000 
+HISTFILE="$HOME/.zsh_history" 
+SAVEHIST=50000 
+setopt APPEND_HISTORY 
+setopt NO_BEEP 
+setopt CD_ABLE_VARS 
+setopt AUTO_CD 
+setopt CORRECT 
+setopt NO_HUP 
+bindkey "\e[1" beginning-of-line 
+bindkey "\e[H" beginning-of-line 
+bindkey "\e[2" transpose-words 
+bindkey "\e[3" delete-char 
+bindkey "\e[4" end-of-line 
+bindkey "\e[F" end-of-line 
 
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/$USER/.oh-my-zsh
+# ZSH Prompt
+# Global settings
+MNML_OK_COLOR="${MNML_OK_COLOR:-2}"
+MNML_ERR_COLOR="${MNML_ERR_COLOR:-1}"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="xiong-chiamiov-plus"
+MNML_USER_CHAR="${MNML_USER_CHAR:-λ}"
+MNML_INSERT_CHAR="${MNML_INSERT_CHAR:-›}"
+MNML_NORMAL_CHAR="${MNML_NORMAL_CHAR:-·}"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+[ "${+MNML_PROMPT}" -eq 0 ] && MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status mnml_keymap)
+[ "${+MNML_RPROMPT}" -eq 0 ] && MNML_RPROMPT=('mnml_cwd 2 0' mnml_git)
+[ "${+MNML_INFOLN}" -eq 0 ] && MNML_INFOLN=(mnml_err mnml_jobs mnml_uhp mnml_files)
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+[ "${+MNML_MAGICENTER}" -eq 0 ] && MNML_MAGICENTER=(mnml_me_dirs mnml_me_ls mnml_me_git)
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Components
+function mnml_status {
+    local okc="$MNML_OK_COLOR"
+    local errc="$MNML_ERR_COLOR"
+    local uchar="$MNML_USER_CHAR"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+    local job_ansi="0"
+    if [ -n "$(jobs | sed -n '$=')" ]; then
+        job_ansi="4"
+    fi
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+    local err_ansi="$MNML_OK_COLOR"
+    if [ "$MNML_LAST_ERR" != "0" ]; then
+        err_ansi="$MNML_ERR_COLOR"
+    fi
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+    echo -n "%{\e[$job_ansi;3${err_ansi}m%}%(!.#.$uchar)%{\e[0m%}"
+}
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+function mnml_keymap {
+    local kmstat="$MNML_INSERT_CHAR"
+    [ "$KEYMAP" = 'vicmd' ] && kmstat="$MNML_NORMAL_CHAR"
+    echo -n "$kmstat"
+}
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+function mnml_cwd {
+    local segments="${1:-2}"
+    local seg_len="${2:-0}"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+    local _w="%{\e[0m%}"
+    local _g="%{\e[38;5;244m%}"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+    if [ "$segments" -le 0 ]; then
+        segments=1
+    fi
+    if [ "$seg_len" -gt 0 ] && [ "$seg_len" -lt 4 ]; then
+        seg_len=4
+    fi
+    local seg_hlen=$((seg_len / 2 - 1))
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+    local cwd="%${segments}~"
+    cwd="${(%)cwd}"
+    cwd=("${(@s:/:)cwd}")
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+    local pi=""
+    for i in {1..${#cwd}}; do
+        pi="$cwd[$i]"
+        if [ "$seg_len" -gt 0 ] && [ "${#pi}" -gt "$seg_len" ]; then
+            cwd[$i]="${pi:0:$seg_hlen}$_w..$_g${pi: -$seg_hlen}"
+        fi
+    done
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+    echo -n "$_g${(j:/:)cwd//\//$_w/$_g}$_w"
+}
 
-source $ZSH/oh-my-zsh.sh
+function mnml_git {
+    local statc="%{\e[0;3${MNML_OK_COLOR}m%}" # assume clean
+    local bname="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 
-# User configuration
+    if [ -n "$bname" ]; then
+        if [ -n "$(git status --porcelain 2> /dev/null)" ]; then
+            statc="%{\e[0;3${MNML_ERR_COLOR}m%}"
+        fi
+        echo -n "$statc$bname%{\e[0m%}"
+    fi
+}
 
-# export MANPATH="/usr/local/man:$MANPATH"
+function mnml_uhp {
+    local _w="%{\e[0m%}"
+    local _g="%{\e[38;5;244m%}"
+    local cwd="%~"
+    cwd="${(%)cwd}"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+    echo -n "$_g%n$_w@$_g%m$_w:$_g${cwd//\//$_w/$_g}$_w"
+}
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+function mnml_ssh {
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        echo -n "$(hostname -s)"
+    fi
+}
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+function mnml_pyenv {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        _venv="$(basename $VIRTUAL_ENV)"
+        echo -n "${_venv%%.*}"
+    fi
+}
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+function mnml_err {
+    local _w="%{\e[0m%}"
+    local _err="%{\e[3${MNML_ERR_COLOR}m%}"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+    if [ "${MNML_LAST_ERR:-0}" != "0" ]; then
+        echo -n "$_err$MNML_LAST_ERR$_w"
+    fi
+}
+
+function mnml_jobs {
+    local _w="%{\e[0m%}"
+    local _g="%{\e[38;5;244m%}"
+
+    local job_n="$(jobs | sed -n '$=')"
+    if [ "$job_n" -gt 0 ]; then
+        echo -n "$_g$job_n$_w&"
+    fi
+}
+
+function mnml_files {
+    local _w="%{\e[0m%}"
+    local _g="%{\e[38;5;244m%}"
+
+    local a_files="$(ls -1A | sed -n '$=')"
+    local v_files="$(ls -1 | sed -n '$=')"
+    local h_files="$((a_files - v_files))"
+
+    local output="${_w}[$_g${v_files:-0}"
+    if [ "${h_files:-0}" -gt 0 ]; then
+        output="$output $_w($_g$h_files$_w)"
+    fi
+    output="$output${_w}]"
+
+    echo -n "$output"
+}
+
+function mnml_me_dirs {
+    local _w="\e[0m"
+    local _g="\e[38;5;244m"
+
+    if [ "$(dirs -p | sed -n '$=')" -gt 1 ]; then
+        local stack="$(dirs)"
+        echo "$_g${stack//\//$_w/$_g}$_w"
+    fi
+}
+
+function mnml_me_ls {
+    if [ "$(uname)" = "Darwin" ] && ! ls --version &> /dev/null; then
+        COLUMNS=$COLUMNS CLICOLOR_FORCE=1 ls -C -G -F
+    else
+        ls -C -F --color="always" -w $COLUMNS
+    fi
+}
+
+function mnml_me_git {
+    git -c color.status=always status -sb 2> /dev/null
+}
+
+function _mnml_wrap {
+    local -a arr
+    arr=()
+    local cmd_out=""
+    local cmd
+    for cmd in ${(P)1}; do
+        cmd_out="$(eval "$cmd")"
+        if [ -n "$cmd_out" ]; then
+            arr+="$cmd_out"
+        fi
+    done
+
+    echo -n "${(j: :)arr}"
+}
+
+function _mnml_iline {
+    echo "${(%)1}"
+}
+
+function _mnml_me {
+    local -a output
+    output=()
+    local cmd_out=""
+    local cmd
+    for cmd in $MNML_MAGICENTER; do
+        cmd_out="$(eval "$cmd")"
+        if [ -n "$cmd_out" ]; then
+            output+="$cmd_out"
+        fi
+    done
+    echo -n "${(j:\n:)output}" | less -XFR
+}
+
+function _mnml_zle-line-init {
+    MNML_LAST_ERR="$?"
+    zle reset-prompt
+}
+
+function _mnml_zle-keymap-select {
+    zle reset-prompt
+}
+
+function _mnml_buffer-empty {
+    if [ -z "$BUFFER" ]; then
+        _mnml_iline "$(_mnml_wrap MNML_INFOLN)"
+        _mnml_me
+        zle redisplay
+    else
+        zle accept-line
+    fi
+}
+
+function _mnml_bind_widgets() {
+    zmodload zsh/zleparameter
+
+    local -a to_bind
+    to_bind=(zle-line-init zle-keymap-select buffer-empty)
+
+    typeset -F SECONDS
+    local zle_wprefix=s$SECONDS-r$RANDOM
+
+    local cur_widget
+    for cur_widget in $to_bind; do
+        case "${widgets[$cur_widget]:-""}" in
+            user:_mnml_*);;
+            user:*)
+                zle -N $zle_wprefix-$cur_widget ${widgets[$cur_widget]#*:}
+                eval "_mnml_ww_${(q)zle_wprefix}-${(q)cur_widget}() { _mnml_${(q)cur_widget}; zle ${(q)zle_wprefix}-${(q)cur_widget} }"
+                zle -N $cur_widget _mnml_ww_$zle_wprefix-$cur_widget
+                ;;
+            *)
+                zle -N $cur_widget _mnml_$cur_widget
+                ;;
+        esac
+    done
+}
+
+# Setup
+setopt prompt_subst
+
+PROMPT='$(_mnml_wrap MNML_PROMPT) '
+RPROMPT='$(_mnml_wrap MNML_RPROMPT)'
+
+_mnml_bind_widgets
+
+bindkey -M main  "^M" buffer-empty
+bindkey -M vicmd "^M" buffer-empty
+
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
+# User specific environment and startup programs
+
+if [ -d "$HOME/.local/bin" ];
+then
+    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME/.local/bin
+else
+    export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:$HOME
+fi
+
+if [ -x "$(command -v ccache)" >/dev/null 2>&1 ];
+then
+  export PATH=/usr/lib/ccache:$PATH
+fi
+
+if [ -x "$(command -v tmux)" >/dev/null 2>&1 ];
+then
+    alias tmux='tmux -2 -u';
+fi
+
+
+# Vi executes vim (if vim exists)
+if [ -x "$(command -v vim)" >/dev/null 2>&1 ];
+then
+    export EDITOR='vim';
+    alias vi='vim'
+fi
+
+# Default Editor
+if [ -x "$(command -v emacs)" >/dev/null 2>&1 ];
+then
+    export EDITOR='emacs -nw';
+    alias emacs='emacs -nw';
+else
+    export EDITOR='vi'
+fi
+
+

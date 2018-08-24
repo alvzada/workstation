@@ -42,6 +42,7 @@ apt-get install \
     evince \
     network-manager-gnome \
     gnome-icon-theme \
+    greybird-gtk-theme \
     firefox-esr \
     libreoffice \
     libreoffice-help-en-us \
@@ -160,12 +161,14 @@ echo "
 # background ='/usr/share/images/desktop-base/default'
 echo "
   [greeter]
+  theme-name = Greybird
   icon-theme-name = Adwaita
-  font-name = Liberation Sans 10
-  indicators = ~spacer;~clock;~spacer;~layout;~session;~power
+  font-name = Sans Condensed 10
+  indicators = ~separator;~host;~spacer;~clock;~spacer;~session;~power;~separator
   screensaver-timeout = 0
   default-user-image = /usr/share/pixmaps/debian-logo.png
-  position = 50%,center 65%,center
+  position = 15%,center 50%,center
+
 " > /etc/lightdm/lightdm-gtk-greeter.conf;
 mkdir -p /etc/lightdm/lightdm.conf.d/;
 echo "
@@ -180,8 +183,10 @@ echo "
     drm
     i915 modeset=1
 " >> /etc/initramfs-tools/modules;
-plymouth-set-default-theme -R solar;
+plymouth-set-default-theme -R tribar;
 update-grub && update-initramfs -uv;
 sleep 2;
 
 echo "All set up, please reboot!"
+
+```

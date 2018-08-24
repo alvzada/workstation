@@ -21,16 +21,16 @@
         <value type="int" value="16"/>
         <value type="int" value="12"/>
       </property>
-      <property name="background-alpha" type="uint" value="63"/>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-alpha" type="uint" value="95"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="background-color" type="array">
-        <value type="uint" value="57568"/>
-        <value type="uint" value="57568"/>
-        <value type="uint" value="57568"/>
+        <value type="uint" value="65535"/>
+        <value type="uint" value="65535"/>
+        <value type="uint" value="65535"/>
         <value type="uint" value="65535"/>
       </property>
-      <property name="enter-opacity" type="uint" value="95"/>
-      <property name="leave-opacity" type="uint" value="95"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="90"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="position" type="string" value="p=10;x=0;y=0"/>
@@ -43,6 +43,7 @@
         <value type="int" value="10"/>
         <value type="int" value="20"/>
         <value type="int" value="5"/>
+        <value type="int" value="21"/>
         <value type="int" value="9"/>
         <value type="int" value="13"/>
         <value type="int" value="19"/>
@@ -52,14 +53,15 @@
       <property name="size" type="uint" value="55"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="autohide-behavior" type="uint" value="1"/>
-      <property name="background-alpha" type="uint" value="90"/>
-      <property name="background-style" type="uint" value="1"/>
+      <property name="background-alpha" type="uint" value="85"/>
+      <property name="background-style" type="uint" value="0"/>
       <property name="background-color" type="array">
         <value type="uint" value="52942"/>
         <value type="uint" value="52942"/>
         <value type="uint" value="52942"/>
         <value type="uint" value="65535"/>
       </property>
+      <property name="leave-opacity" type="uint" value="90"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -154,6 +156,11 @@
     </property>
     <property name="plugin-12" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-21" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15350871611.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

@@ -24,9 +24,9 @@
       <property name="background-alpha" type="uint" value="63"/>
       <property name="background-style" type="uint" value="1"/>
       <property name="background-color" type="array">
-        <value type="uint" value="62451"/>
-        <value type="uint" value="59881"/>
-        <value type="uint" value="56797"/>
+        <value type="uint" value="57568"/>
+        <value type="uint" value="57568"/>
+        <value type="uint" value="57568"/>
         <value type="uint" value="65535"/>
       </property>
       <property name="enter-opacity" type="uint" value="95"/>

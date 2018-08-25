@@ -37,6 +37,6 @@
     <property name="LaunchGNOME" type="bool" value="true"/>
   </property>
   <property name="security" type="empty">
-    <property name="EnableTcp" type="bool" value="false"/>
+    <property name="EnableTcp" type="bool" value="true"/>
   </property>
 </channel>

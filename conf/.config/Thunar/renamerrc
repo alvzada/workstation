@@ -4,7 +4,7 @@ LastActiveRenamer=ThunarSbrReplaceRenamer
 
 [ThunarSbrReplaceRenamer]
 Regexp=TRUE
-Replacement=sh
+Replacement=
 CaseSensitive=FALSE
-Pattern=txt
+Pattern=www.DjMaza.com
 

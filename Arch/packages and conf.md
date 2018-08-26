@@ -1,3 +1,10 @@
+- **Connect to Wireless**
+
+```bash
+$ nmcli device wifi rescan; nmcli device wifi list
+$ nmcli device wifi connect <SSID> password <password>
+```
+
 - **Setting up the system**
 
 ```bash

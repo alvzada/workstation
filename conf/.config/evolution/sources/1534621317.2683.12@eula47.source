@@ -1,0 +1,20 @@
+[Data Source]
+DisplayName=nikolaibitinit@gmail.com
+Enabled=true
+Parent=
+
+[Authentication]
+Host=
+Method=Google
+Port=0
+ProxyUid=system-proxy
+RememberPassword=true
+User=nikolaibitinit@gmail.com
+CredentialName=
+
+[Collection]
+BackendName=google
+CalendarEnabled=true
+ContactsEnabled=true
+Identity=nikolaibitinit@gmail.com
+MailEnabled=true

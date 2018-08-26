@@ -1,0 +1,24 @@
+[Data Source]
+DisplayName=nikolaibitinit@gmail.com
+Enabled=true
+Parent=1534621317.2683.12@eula47
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://1534621317.2683.2%40eula47/%5bGmail%5d/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=folder://local/Templates
+
+[Mail Identity]
+Address=nikolaibitinit@gmail.com
+Name=Nikolai Lvovich
+Organization=
+ReplyTo=
+SignatureUid=none
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=1534621317.2683.10@eula47
+RepliesToOriginFolder=false

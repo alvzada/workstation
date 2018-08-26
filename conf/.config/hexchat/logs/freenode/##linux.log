@@ -1,0 +1,251 @@
+**** BEGIN LOGGING AT Mon Aug 20 02:19:30 2018
+
+Aug 20 02:19:30 *	Now talking on ##linux
+Aug 20 02:19:30 *	Topic for ##linux is: Channel website: https://freenode.linux.community | Pastebin: https://paste.linux.community | Spammers or trolls or any other op assistance, join ##linux-ops | Set /umode +R if you're getting tons of nonsensical PMs | Feel at home and enjoy your stay!
+Aug 20 02:19:30 *	Topic for ##linux set by DLange!~DLange@about/linux/staff/dlange (Sun May 27 11:17:21 2018)
+Aug 20 02:19:31 -ChanServ-	[##linux] Please see https://freenode.linux.community/how-to-connect/ on how to register or identify your nick. By joining this channel you agree to abide by the channel rules and guidelines laid out at https://freenode.linux.community/channel-rules/.
+Aug 20 02:19:31 *	Channel ##linux url: http://linux.chat
+Aug 20 02:19:34 <Dagmar>	zenix_2k2: If the SMART self-tests call foul, _then_ you have a broken drive.  If they _don't_ then you could have some other, more nefarious problem, like failing RAM
+Aug 20 02:19:39 <zapotah>	its a conscious choice
+Aug 20 02:19:48 <zenix_2k2>	Dagmar: so how can i run it ?
+Aug 20 02:19:48 <pfred1>	Dagmar smart doesn't catch everything
+Aug 20 02:19:50 *	PolluxZ has quit (Quit: Lost terminal)
+Aug 20 02:19:50 <gunix>	pfred1: what?
+Aug 20 02:19:54 *	briner has quit (Quit: briner)
+Aug 20 02:20:42 <Dagmar>	zenix_2k2: `smartctl -t short /dev/drivename` for starters, then `smartctl -a /dev/drivename` to see what it decided, and if that short test passed, then you run the -t long test (which may take several hours) and see if that passed
+Aug 20 02:20:42 <zenix_2k2>	"everything" is too much, probably some vital stuffs is enough
+Aug 20 02:20:51 <pfred1>	Dagmar a nefarious problem would be a dodgy PSU too
+Aug 20 02:20:54 <zenix_2k2>	life is too short for everything in this case
+Aug 20 02:21:08 *	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com) has joined
+Aug 20 02:21:08 <Dagmar>	pfred1: Except it's a better indicator of if the drive is failing than just "I have a corrupted filesystem":
+Aug 20 02:21:17 *	[Awaxx] has quit (Quit: unmap'd that dirty pin.)
+Aug 20 02:21:26 <pfred1>	Dagmar hmm smart is the wise choice
+Aug 20 02:21:37 <pfred1>	full scan is best
+Aug 20 02:21:44 <sauvin>	Any idiot can corrupt a filesystem.
+Aug 20 02:21:48 *	Sizesu (~cerberus@dslb-002-203-011-119.002.203.pools.vodafone-ip.de) has joined
+Aug 20 02:21:53 *	eset_ (~eset@c204-254.icpnet.pl) has joined
+Aug 20 02:21:55 <Dagmar>	Enh the short one generally takes like two minutes, so it doesn't hurt to start there
+Aug 20 02:21:57 <pfred1>	sauvin we sure can!
+Aug 20 02:21:59 *	nibble_zero has quit (Quit: nibble_zero)
+Aug 20 02:22:04 <Dagmar>	It'll turn over problems with failing disk cache
+Aug 20 02:22:17 <pfred1>	once I set the DMA mode wrong on a system don't do that
+Aug 20 02:22:28 *	keepLearning512 has quit (Remote host closed the connection)
+Aug 20 02:22:34 <Dagmar>	The long test does a surface (non-destructive) test
+Aug 20 02:22:41 <pfred1>	I thought for sure that system had udma6
+Aug 20 02:22:41 <zapotah>	the thing about smart diag is that even if youve reallocated sectors, it will tell you its a pass
+Aug 20 02:22:42 <zenix_2k2>	Dagmar: ok thk
+Aug 20 02:22:43 <sauvin>	I once didn't appreciate the difference between a file HANDLE and a file POINTER while learning C. Trashed the filesystem.
+Aug 20 02:22:47 *	KipperedSnack has quit (Quit: Meow.)
+Aug 20 02:22:59 <Dagmar>	...and it tends to take "a while" on large, slow drives, since it reads each and every sector looking for CRC failures
+Aug 20 02:23:08 <pfred1>	apparently it didn't
+Aug 20 02:23:17 <Dagmar>	zapotah: SMART will tell you how many sectors have already been remapped
+Aug 20 02:23:23 *	yohnnyjoe has quit (Ping timeout: 272 seconds)
+Aug 20 02:23:23 <zapotah>	Dagmar: yup
+Aug 20 02:23:27 <Dagmar>	...or if they were recoverable.
+Aug 20 02:23:28 *	fishfears (~whomstdun@70.39.109.197) has joined
+Aug 20 02:23:29 <zapotah>	Dagmar: but it will not fail
+Aug 20 02:23:40 <sauvin>	Dagmar, back in the DOS days as I remember it, BIOS would re-read a sector 32 times, I think it was, before reporting an error.
+Aug 20 02:23:42 <pfred1>	smart will also map around bad sectors it finds
+Aug 20 02:23:49 <Dagmar>	sauvin: Drives do all that themselves now
+Aug 20 02:23:59 <pfred1>	ah I wouldn't bet on it
+Aug 20 02:24:06 <sauvin>	Still with the mounting bad read counts before flagging?
+Aug 20 02:24:07 <Dagmar>	pfred1: It has to be told to attempt to write to the pending uncorrectable sector before it will remap them
+Aug 20 02:24:16 *	ninjakeks has quit (Remote host closed the connection)
+Aug 20 02:24:21 <Dagmar>	THat's where dd comes in
+Aug 20 02:24:36 <pfred1>	there's where you accept that you're going to lose data
+Aug 20 02:24:38 *	paulcarroty has quit (Quit: Leaving)
+Aug 20 02:24:41 <sauvin>	Maybe I should have said "rising" rather than "mounting".
+Aug 20 02:25:05 <Dagmar>	Well, you've already lost some data if anything came up as pending_uncorrectable
+Aug 20 02:25:08 <SuperSeriousCat>	zenix_2k2, HDDs got like 3-5 years warranty. Just run SMART and check if it indeed is the HDD, and if it is you return it
+Aug 20 02:25:09 *	clarjon1 (~clarjon1@unaffiliated/clarjon1) has joined
+Aug 20 02:25:18 *	boombatower (~boombatow@drupal.org/user/214218/view) has joined
+Aug 20 02:25:22 <pfred1>	Dagmar yes but you have to accept it at some point
+Aug 20 02:25:22 *	KipperedSnack (~secured@buffer0verflow.com) has joined
+Aug 20 02:25:30 <Dagmar>	Just having the SMART tests fail will generally get the manufacturer to cough up an RMA number
+Aug 20 02:25:37 <sauvin>	Nuke it first if you don't want people knowing what your porn profile is like.
+Aug 20 02:25:41 *	gdibass has quit (Read error: Connection reset by peer)
+Aug 20 02:25:48 <Dagmar>	(and yes, generally more than 60 remapped sectors will be beyond the warranty threshhold)
+Aug 20 02:25:53 *	lin_noob (~lin_noob@unaffiliated/lin-noob/x-6934866) has joined
+Aug 20 02:26:28 <Dagmar>	...but you can corrupt a filesystem just by killing the power during a write
+Aug 20 02:26:46 *	Cthulu201 (~Cthulu201@unaffiliated/cthulu201) has joined
+Aug 20 02:26:50 <Dagmar>	All the drive has to do is fail to complete writing a sector because the power went out, and *boom* it'll start failing that sector
+Aug 20 02:26:58 *	DannyDevOpsS (~Danny_Dev@47.188.44.39) has joined
+Aug 20 02:27:13 *	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com) has joined
+Aug 20 02:27:13 *	eset_ has quit (Ping timeout: 256 seconds)
+Aug 20 02:27:17 *	mandeep (~mandeep@unaffiliated/mandeepb) has joined
+Aug 20 02:27:18 <Dagmar>	It also will not ever do anything but cough up an error reading that particular sector until you've tried to rewrite it at least once
+Aug 20 02:27:22 <pfred1>	she said a boom
+Aug 20 02:27:28 <sauvin>	Makes a strong case for graceful shutdowns rather than just hitting the power switch.
+Aug 20 02:27:48 <Dagmar>	A big case for buying a cheap UPS with a USB interface
+Aug 20 02:27:52 *	DannyDevOpsS has quit (Client Quit)
+Aug 20 02:27:52 *	Sanderski has quit (Remote host closed the connection)
+Aug 20 02:27:58 *	akwiatkowski (~bobik314@88.199.94.94) has joined
+Aug 20 02:28:13 <pfred1>	journal works here
+Aug 20 02:28:16 <Dagmar>	Even the little single F2 battery models will keep a machine running long enough to gracefully shutdown if the power blinks out
+Aug 20 02:28:17 *	itissid has quit (Remote host closed the connection)
+Aug 20 02:28:17 <lin_noob>	They should use capacitors inside the hard drive to protect against that.
+Aug 20 02:28:23 *	awkwords has quit (Quit: sleepy time)
+Aug 20 02:28:50 <Dagmar>	lin_noob: "Normal operating conditions" does not include 'random power failures", man
+Aug 20 02:28:52 *	itissid (~itissid@c-73-10-47-27.hsd1.nj.comcast.net) has joined
+Aug 20 02:28:56 *	DannyDevOpsS (~DannyDevO@47.188.44.39) has joined
+Aug 20 02:29:06 <sauvin>	I have the feeling a capacitor big enough to suit such a purpose isn't something you'd want going BOOM so close to the hard drive.
+Aug 20 02:29:08 <lin_noob>	Power failures happen all the time
+Aug 20 02:29:09 <pfred1>	Dagmar losing power is normal here
+Aug 20 02:29:11 *	bullgard4 (~bullgard4@dslb-094-222-244-093.094.222.pools.vodafone-ip.de) has joined
+Aug 20 02:29:21 <Dagmar>	Then you should be buying a UPS for everything you've got
+Aug 20 02:29:27 <lin_noob>	Or use RAID
+Aug 20 02:29:27 <pfred1>	nah
+Aug 20 02:29:35 *	TheFuzzball (~TheFuzzba@cpc130782-camd17-2-0-cust454.know.cable.virginm.net) has joined
+Aug 20 02:29:37 <Dagmar>	I live in TN, and not only will power fail due to lightning strikes... freaking LIGHTNING STRIKES
+Aug 20 02:29:44 *	zenix_2k2 has quit (Quit: Leaving)
+Aug 20 02:29:59 <Dagmar>	Run without a UPS and you're pretty much going to lose some equipment in any ten-year span
+Aug 20 02:30:07 *	xalen has quit (Quit: Leaving)
+Aug 20 02:30:21 <pfred1>	in TN a lightning strike is when you get drunk on shine and trip over the power cord
+Aug 20 02:30:33 <sauvin>	Naw, that's Alabama.
+Aug 20 02:30:37 <Dagmar>	No, in TN a lightning strike tends to be "one of 10,000 that hit in the last two hours"
+Aug 20 02:30:38 *	mandeep has quit (Client Quit)
+Aug 20 02:30:46 <Dagmar>	We get _lots_ of lightning
+Aug 20 02:30:46 <sauvin>	You know, the state where they have 17 million people and 17 last names.
+Aug 20 02:31:02 *	eset_ (~eset@c204-254.icpnet.pl) has joined
+Aug 20 02:31:03 <wyoung>	sauvin: Sounds legit
+Aug 20 02:31:06 <pfred1>	sauvin I been both places there's not much difference on the ground
+Aug 20 02:31:11 <Dagmar>	It scares the hell out of tourists in the spring and early summer
+Aug 20 02:31:31 *	mandeep (mandeep@gateway/vpn/privateinternetaccess/mandeepb) has joined
+Aug 20 02:31:37 <pfred1>	if you want to see lightning go to Florida
+Aug 20 02:31:38 <wyoung>	Dagmar: What does? the lack of genetic diversity?
+Aug 20 02:31:43 <Dagmar>	Not everywhere regularly sees storms that will strike visibly in the neighborhood three to five times a minute
+Aug 20 02:32:01 *	orbisvicis (~orbisvici@unaffiliated/orbisvicis) has left
+Aug 20 02:32:12 <Dagmar>	It's part of hte reason the CoE have substations literally every few miles
+Aug 20 02:32:23 <pfred1>	I been in electrical storms in Florida that look like the War of the worlds is going on
+Aug 20 02:32:25 *	keepLearning512 (~keepLearn@49.207.48.138) has joined
+Aug 20 02:32:35 <Dagmar>	That's pretty much the average spring storm in TN
+Aug 20 02:32:39 *	wildermind has quit (Quit: Connection closed for inactivity)
+Aug 20 02:32:44 <sauvin>	I seem to remember lightning in IL as being a lot worse when I was a kid. I rarely even *see* lightning anymore at all.
+Aug 20 02:33:03 <Dagmar>	When I was in SF, I saw _two_ lightning strikes the two years i was there
+Aug 20 02:33:10 <wyoung>	pfred1: I like HG Wells
+Aug 20 02:33:19 *	itissid has quit (Ping timeout: 244 seconds)
+Aug 20 02:33:21 <sauvin>	Naw, you just like Weena.
+Aug 20 02:33:26 *	helloh0la (~codingj19@186.167.250.43) has joined
+Aug 20 02:33:27 <Dagmar>	Here, I saw two lightning strikes _last night_ and it barely even got around to sprinkling
+Aug 20 02:33:30 *	CoJaBo_ is now known as CoJaBo
+**** ENDING LOGGING AT Mon Aug 20 02:33:34 2018
+
+**** BEGIN LOGGING AT Mon Aug 20 02:34:43 2018
+
+Aug 20 02:34:43 *	Now talking on ##linux
+Aug 20 02:34:43 *	Topic for ##linux is: Channel website: https://freenode.linux.community | Pastebin: https://paste.linux.community | Spammers or trolls or any other op assistance, join ##linux-ops | Set /umode +R if you're getting tons of nonsensical PMs | Feel at home and enjoy your stay!
+Aug 20 02:34:43 *	Topic for ##linux set by DLange!~DLange@about/linux/staff/dlange (Sun May 27 11:17:21 2018)
+Aug 20 02:34:43 -ChanServ-	[##linux] Please see https://freenode.linux.community/how-to-connect/ on how to register or identify your nick. By joining this channel you agree to abide by the channel rules and guidelines laid out at https://freenode.linux.community/channel-rules/.
+Aug 20 02:34:43 *	Channel ##linux url: http://linux.chat
+Aug 20 02:34:55 *	boombatower_ (~boombatow@drupal.org/user/214218/view) has joined
+Aug 20 02:35:01 *	jhaenchen (~jhaenchen@cpe-24-55-35-203.austin.res.rr.com) has joined
+Aug 20 02:35:09 *	boombatower has quit (Ping timeout: 256 seconds)
+Aug 20 02:35:23 <VinAlencc>	Hey, guys! How r u? Only for curiosity: if I am working with bridge, do I need to patch my kernel to include bridge-nf? Is it really necessary to include this resource (bridge-nf) into my kernel?
+Aug 20 02:35:27 *	thai_ has quit (Ping timeout: 240 seconds)
+Aug 20 02:35:43 <wyoung>	no
+Aug 20 02:35:52 <VinAlencc>	Okay, thx
+Aug 20 02:35:54 *	abarmuc (~Mutter@tmo-097-15.customers.d1-online.com) has joined
+Aug 20 02:36:04 <Dagmar>	If it can be built as a module, build it as a module
+Aug 20 02:36:10 <wyoung>	VinAlencc: just sudo apt-get install bridge-utils
+Aug 20 02:36:13 <Dagmar>	The kernel will resolutely ignore it if it's not needed
+Aug 20 02:36:22 <pfred1>	I love initramfs
+Aug 20 02:36:24 *	saint__ (~saint_@unaffiliated/saint-/x-0540772) has joined
+Aug 20 02:36:28 *	coellobranco has quit (Quit: Arch User...)
+Aug 20 02:36:37 <wyoung>	VinAlencc: Then configure network manager or /etc/network/interfaces
+Aug 20 02:36:43 *	dmj` (uid72307@gateway/web/irccloud.com/x-acksjmqgglvymzyb) has joined
+Aug 20 02:36:50 <pfred1>	Dagmar my kernel seems to load up a lot of junk that I don't feel a need for
+Aug 20 02:36:56 <VinAlencc>	Got it. Thanks. And, btw, what is the difference between work with bridge-nf and don't work with it?
+Aug 20 02:37:18 *	keepLearning512 has quit (Ping timeout: 272 seconds)
+Aug 20 02:37:22 <wyoung>	VinAlencc: nf means netfilter, it sounds like an iptables rule set.
+Aug 20 02:37:24 *	eset_ has quit (Ping timeout: 256 seconds)
+Aug 20 02:37:31 <pfred1>	I have definitely gotten by with less than I'm loading now
+Aug 20 02:37:42 <VinAlencc>	wyoung: I see, thanks
+Aug 20 02:37:44 *	Laif has quit (Quit: Leaving)
+Aug 20 02:37:51 <pfred1>	like mei_me what is that?
+Aug 20 02:37:51 <wyoung>	VinAlencc: Only use that if you need to create iptables rules based on bridges.
+Aug 20 02:37:57 *	motte has quit (Ping timeout: 272 seconds)
+Aug 20 02:37:57 *	saint_ has quit (Ping timeout: 240 seconds)
+Aug 20 02:38:13 <VinAlencc>	wyoung: I will think about it.
+Aug 20 02:38:17 *	axiom_1 has quit (Quit: Leaving)
+Aug 20 02:39:04 *	ahi2 has quit (Quit: Leaving)
+Aug 20 02:39:18 *	motte (~weechat@unaffiliated/motte) has joined
+Aug 20 02:39:29 <VinAlencc>	Thank you for you help. guys! See you!
+Aug 20 02:39:33 *	abarmuc has quit (Quit: Mutter: http://www.mutterirc.com)
+Aug 20 02:39:40 *	VinAlencc (~VinAlencc@unaffiliated/vinalencc) has left
+Aug 20 02:39:45 *	awkpirate has quit (Remote host closed the connection)
+Aug 20 02:39:57 *	Dave_Elec has quit (Ping timeout: 240 seconds)
+Aug 20 02:40:27 *	DannyDevOpsS has quit (Quit: Mutter: www.mutterirc.com)
+Aug 20 02:41:21 *	johnjay has quit (Ping timeout: 252 seconds)
+Aug 20 02:41:47 *	spacedust (~info@unaffiliated/cosmicblue) has joined
+Aug 20 02:41:47 *	limansky has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+Aug 20 02:43:09 *	bullgard4 has quit (Quit: ChatZilla 0.9.92-rdmsoft [XULRunner 35.0.1/20150122214805])
+Aug 20 02:43:11 *	Hedaaa has quit (Read error: Connection reset by peer)
+Aug 20 02:43:43 *	kasitano has quit (Ping timeout: 260 seconds)
+Aug 20 02:44:01 *	helloh0la has quit (Ping timeout: 265 seconds)
+Aug 20 02:44:41 *	madmangun has quit (Ping timeout: 244 seconds)
+Aug 20 02:44:54 *	hell0h0la19 has quit (Ping timeout: 272 seconds)
+Aug 20 02:45:03 <pfred1>	everyone here was all like get an SSD get an SSD so I got an SSD color me unimpressed
+Aug 20 02:45:16 <darkmeson>	not "everyone"
+Aug 20 02:45:30 <pfred1>	darkmeson it was universal
+Aug 20 02:45:39 <ayecee>	100% agreement
+Aug 20 02:45:40 <darkmeson>	in fact, I always make it a point to say more ram > ssds most of the time
+Aug 20 02:46:00 <ayecee>	a rare consensus
+Aug 20 02:46:05 <pfred1>	yeah I expected some programs to start faster I'm just not seeing it
+Aug 20 02:46:16 <pfred1>	although I will admit it does boot faster
+Aug 20 02:46:33 <darkmeson>	yeah, but if you're booting THAT much, you're doing it wrong
+Aug 20 02:46:38 <pfred1>	indeed
+Aug 20 02:46:46 <lin_noob>	I have 16gb of ram and its still not enough
+Aug 20 02:46:51 *	MLarabel has quit (Ping timeout: 252 seconds)
+Aug 20 02:46:52 <pfred1>	still this system boots so fast now it is laughable
+Aug 20 02:47:12 *	kerrhau- (~kerrhau@2600:1700:7aa1:2ee0::49) has joined
+Aug 20 02:47:17 <darkmeson>	browsers will happily chew 16g by themselves (and then some), so definitely not enough
+Aug 20 02:47:20 *	nathanlmao has quit (Ping timeout: 276 seconds)
+Aug 20 02:47:24 <pfred1>	nah
+Aug 20 02:47:28 <pfred1>	I am not tab happy
+Aug 20 02:47:28 *	kerrhau has quit (Read error: Connection reset by peer)
+Aug 20 02:47:34 <lin_noob>	Why is RAM still so expensive?
+Aug 20 02:47:42 lin_noob liefer LiftLeft likcoras lilkuz2005 lilwiz limbo_ limo09 Lindrian linear Linkandzelda Linlz Linny linuxdaemon linuxthefish liori littlebean_ livelace lizardlarry 
+Aug 20 02:47:43 <pfred1>	because people will pay for it
+Aug 20 02:47:44 <darkmeson>	it's not about being tab happy, it's about their being tab-stupid
+Aug 20 02:47:45 lin_noob Lindrian linear Linkandzelda Linlz Linny linuxdaemon linuxthefish 
+Aug 20 02:47:51 <spacedust>	pfred1: so you are not happy with your SSD ? :)
+Aug 20 02:47:55 <spacedust>	pfred1: which SSD was it ?
+Aug 20 02:48:00 <dviola>	lin_noob: inflation?
+Aug 20 02:48:01 <fr0xk>	lin_noob, What?
+Aug 20 02:48:02 <darkmeson>	lin_noob: cryptocurrency mining
+Aug 20 02:48:05 *	ttoocs has quit (Ping timeout: 272 seconds)
+Aug 20 02:48:09 <darkmeson>	(probably)
+Aug 20 02:48:11 <spacedust>	lin_noob: its new tech RAM,
+Aug 20 02:48:15 <darkmeson>	same as for gpus
+Aug 20 02:48:16 <lin_noob>	darkmeson: No that's AMD graphics cards
+Aug 20 02:48:25 <pfred1>	spacedust I got a  Model=WDC WDS500G2B0A-00SM50, FwRev=X61190WD, SerialNo=1823AF800229
+Aug 20 02:48:27 <darkmeson>	s/AMD/nvidia/
+Aug 20 02:48:37 <lin_noob>	RAM is new tech? Lol. And its not like anyone actually notices the difference between DDR4 and DDR3
+Aug 20 02:48:38 <spacedust>	pfred1: maybe next time get something else ?
+Aug 20 02:48:45 *	Bunk (~0@unaffiliated/bunk) has joined
+Aug 20 02:48:48 <spacedust>	pfred1: what is not impressive about it ? isnt it too fast ?
+Aug 20 02:48:54 <darkmeson>	lin_noob: I do. higher densities available
+Aug 20 02:48:59 <fr0xk>	Install GNOME, case closed :D
+Aug 20 02:49:03 <pfred1>	spacedust yeah it doesn't really speed up loading programs
+Aug 20 02:49:28 <pfred1>	I guess it helps compiling
+Aug 20 02:49:33 *	abarmuc (~Mutter@tmo-097-15.customers.d1-online.com) has joined
+Aug 20 02:49:34 <pfred1>	that does seem to have sped up
+Aug 20 02:49:41 <darkmeson>	pfred1: in fairness though, an SSD *is* nice for bcache-like stuff
+Aug 20 02:49:46 <spacedust>	pfred1: your 500GB has 200TBW endurance
+Aug 20 02:49:54 <darkmeson>	especially if you've already maxed out on ram
+Aug 20 02:50:02 <Bunk>	Umm, one question. I wanted to see sh files in a folder ls *.sh , but some sh files don't end with .sh - how can i display them anyway ?
+Aug 20 02:50:19 <pfred1>	I only have 8 GB RAM
+Aug 20 02:50:35 <pfred1>	I think this motherboard can handle 32GB?
+Aug 20 02:50:36 *	AciD` has quit (Ping timeout: 240 seconds)
+Aug 20 02:50:49 <darkmeson>	Bunk: file <path>/* |grep -i shell |cut -d":" -f1
+Aug 20 02:51:02 <lin_noob>	8GB? Lol even phones have that much RAM now.
+Aug 20 02:51:10 <Bunk>	Oh, thank you darkmeson
+Aug 20 02:51:16 <lin_noob>	8GB would barely get you 2 tabs open in Chrome.
+Aug 20 02:51:23 <pfred1>	lin_noob I use less than 2 GB
+Aug 20 02:51:25 <spacedust>	pfred1: im using one of these now https://ark.intel.com/products/125020/Intel-SSD-545s-Series-256GB-2_5in-SATA-6Gbs-3D2-TLC its fairly decent i would say, but i never expected any program to start in picoseconds :) so maybe it just me
+Aug 20 02:51:30 *	Dave_Elec (~Dave@197.156.119.11) has joined
+Aug 20 02:52:12 <lin_noob>	pfred1: And let me guess, you use Arch?
+Aug 20 02:52:23 <pfred1>	lin_noob no
+Aug 20 02:53:12 *	oryois (~jr9@unaffiliated/hidden-host) has joined
+Aug 20 02:53:12 <darkmeson>	the stupid thing is that browsers STILL don't just save an intermediate form of a page
+Aug 20 02:53:15 <lin_noob>	Well you're definitely not running Ubuntu or Mint with 2GB

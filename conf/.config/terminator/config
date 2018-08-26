@@ -9,8 +9,8 @@
       maximised = False
       order = 0
       parent = ""
-      position = 601:237
-      size = 930, 556
+      position = 151:271
+      size = 870, 554
       title = fr0xk@eula47:~
       type = Window
     [[[terminal1]]]

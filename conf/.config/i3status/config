@@ -1,0 +1,164 @@
+# github.com/rafi i3status config
+
+# i3status configuration file
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+#
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+	colors = true
+	color_good = "#BBBBBB"
+	color_bad = "#CC1616"
+	color_degraded = "#55858E"
+	interval = 2
+}
+
+order += "volume master"
+order += "load"
+order += "cpu_usage"
+#order += "cpu_temperature 0"
+order += "cpu_temperature 1"
+order += "cpu_temperature 2"
+#order += "cpu_temperature 3"
+order += "disk /"
+order += "disk /media/media"
+order += "ethernet enp0s29u1u5"
+order += "wireless wlp0s26u1u1"
+order += "tztime local"
+order += "tztime Asia/Kolkata"
+#order += "ipv6"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+
+
+volume master {
+	format = " ♪: %volume  "
+  format_muted = " ♪: %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+	# termsyn font
+}
+
+load {
+	# termsyn font
+	format = " %1min"
+}
+
+cpu_usage {
+	format = "%usage "
+}
+
+cpu_temperature 0 {
+	format = " ± %degrees°"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+	max_threshold = 95
+}
+
+cpu_temperature 1 {
+	format = "%degrees°"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input"
+	max_threshold = 95
+}
+
+cpu_temperature 2 {
+	format = "%degrees°"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp3_input"
+	max_threshold = 95
+}
+
+cpu_temperature 3 {
+	format = "%degrees° "
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp4_input"
+	max_threshold = 95
+}
+
+disk "/" {
+	format = " ¨ %avail:/ "
+}
+
+disk "/media/media" {
+	format = " ¨ %avail:m "
+}
+
+run_watch DHCP {
+	pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+	pidfile = "/var/run/vpnc/pid"
+}
+
+tztime local {
+#	format = " %h-%d %H:%M ☰ "
+	# termsyn font
+	format = " %h-%d É %H:%M "
+}
+
+wireless wlp0s26u1u1 {
+        format_up = "⇝ WiFi Connected: (%bitrate)"
+        format_down = "↛ WiFi Down"
+}
+
+ethernet enp0s29u1u5 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "⇌ Ethernet Connected"
+        format_down = "↛ Ethernet Down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        status_chr = "⚇ CHR"
+        status_bat = "⚡ BAT"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+        # file containing the PID of a vpnc process
+        pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+        path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+tztime Amsterdam {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+        timezone = "Asia/Kolkata"
+}
+
+load {
+        format = "%5min"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+        format = "%free"
+}

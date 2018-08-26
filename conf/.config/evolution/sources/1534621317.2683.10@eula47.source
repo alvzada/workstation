@@ -1,0 +1,19 @@
+[Data Source]
+DisplayName=nikolaibitinit@gmail.com
+Enabled=true
+Parent=1534621317.2683.12@eula47
+
+[Mail Transport]
+BackendName=smtp
+
+[Authentication]
+Host=smtp.googlemail.com
+Method=Google
+Port=465
+ProxyUid=system-proxy
+RememberPassword=true
+User=nikolaibitinit@gmail.com
+CredentialName=
+
+[Security]
+Method=ssl-on-alternate-port

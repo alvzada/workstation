@@ -1,0 +1,6 @@
+T 1534711804 19*	Now talking on 22#gnome
+T 1534711804 22*	Topic for 22#gnome is: Unofficial GNOME support channel | GNOME 3.28 released - https://help.gnome.org/misc/release-notes/3.28/ | Want to get involved? - https://wiki.gnome.org/Newcomers | https://freenode.net/news/spambot-attack
+T 1534711804 22*	Topic for 22#gnome set by 26borschty (24Sat Aug  4 20:50:34 2018)
+T 1534711868 23*	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com23) has joined
+T 1534712141 24*	gdibass has quit (Read error: Connection reset by peer)
+T 1534712233 23*	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com23) has joined

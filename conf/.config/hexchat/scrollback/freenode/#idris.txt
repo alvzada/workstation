@@ -1,0 +1,6 @@
+T 1534713204 19*	Now talking on 22#idris
+T 1534713204 22*	Topic for 22#idris is: http://idris-lang.org | Idris is a general purpose pure functional programming language with dependent types | Please stay here for a while after asking your question, we might not be able to answer immediately |  See our FAQ at http://idris-lang.org/faq | Unregistered users are currently muted due to spam.
+T 1534713204 22*	Topic for 22#idris set by 26{AS}!sid45026@gateway/web/irccloud.com/x-yatraabmxrfervhm (24Wed Jul 25 23:12:09 2018)
+T 1534713209 20<fr0xk>30	..
+T 1534713732 23*	Ugrastil (~Ugrastil@111.118.2.23023) has joined
+T 1534713792 23*	dan_f (~dan@24.148.38.23323) has joined

@@ -1,0 +1,6 @@
+T 1534713584 19*	Now talking on 22#xfce
+T 1534713584 22*	Topic for 22#xfce is: Xfce | Get Xfce 4.12: http://www.xfce.org/download | Help translating: http://translations.xfce.org/ | Fix easy, small bugs: https://wiki.xfce.org/contribute/easybugs | Looking for user support? Ask your question and then BE PATIENT AND IDLE FOR A WHILE
+T 1534713584 22*	Topic for 22#xfce set by 26sidi (24Thu Aug  4 17:38:55 2016)
+T 1534713585 22*	Channel 22#xfce url: 24http://www.xfce.org
+T 1534713656 24*	cmeerw has quit (Quit: Leaving.)
+T 1534713751 24*	pingjocky has quit (Quit: leaving)

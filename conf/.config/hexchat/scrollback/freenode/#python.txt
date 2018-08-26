@@ -1,0 +1,32 @@
+T 1534711783 19*	Now talking on 22#python
+T 1534711783 22*	Topic for 22#python is: Anything about Python is on-topic. Don't paste, use https://paste.pound-python.org/ | https://j.mp/psf-coc | Tutorial: https://j.mp/MCAhYx | New programmer? https://j.mp/23X7emF | Find your local User Group: https://j.mp/1Mq06bF | #python-fr #python.de #python-es #python.tw #python-br #python-nl #python-ir #python.it #python-ro #python-india #python-hu #python-dk
+T 1534711783 22*	Topic for 22#python set by 26_habnabit!~habnabit@python/site-packages/habnabit (24Thu Aug  9 05:06:30 2018)
+T 1534711868 23*	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com23) has joined
+T 1534711876 24*	ompaul has quit (Quit: and zebedee said its time for other stuff)
+T 1534711877 24*	[Awaxx] has quit (Quit: unmap'd that dirty pin.)
+T 1534711919 24*	nibble_zero has quit (Quit: nibble_zero)
+T 1534712080 23*	greatgatsby (~greatgats@xplr-104-249-255-28.xplornet.com23) has joined
+T 1534712102 23*	AcTiVaTe (~activate@host-m7ku8h.tnz1.zeelandnet.nl23) has joined
+T 1534712109 23*	clarjon1 (~clarjon1@unaffiliated/clarjon123) has joined
+T 1534712141 24*	anqxyr has quit (Read error: Connection reset by peer)
+T 1534712141 24*	gdibass has quit (Read error: Connection reset by peer)
+T 1534712193 24*	mmfood has quit (Ping timeout: 276 seconds)
+T 1534712206 23*	Cthulu201 (~Cthulu201@unaffiliated/cthulu20123) has joined
+T 1534712233 23*	gdibass (~gdibass@rrcs-76-80-178-3.west.biz.rr.com23) has joined
+T 1534712237 23*	mandeep (~mandeep@unaffiliated/mandeepb23) has joined
+T 1534712259 24*	csotelo has quit (Remote host closed the connection)
+T 1534712286 23*	KipperedSnack (~secured@buffer0verflow.com23) has joined
+T 1534712303 23*	Gustavo6056 (~Gustavo60@unaffiliated/gustavo604623) has joined
+T 1534712319 24*	Serg_Penguin has quit (Remote host closed the connection)
+T 1534712351 24*	Gustavo6046 has quit (Ping timeout: 244 seconds)
+T 1534712394 23*	juanfra (~juanfra@unaffiliated/juanfra23) has joined
+T 1534712422 24*	Naan has quit (Quit: Leaving)
+T 1534712427 24*	IndianArya has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+T 1534712438 24*	mandeep has quit (Client Quit)
+T 1534712458 24*	rippa has quit (Quit: {#`%${%&`+'${`%&NO CARRIER)
+T 1534712491 23*	mandeep (mandeep@gateway/vpn/privateinternetaccess/mandeepb23) has joined
+T 1534712495 24*	Masklin has quit (Ping timeout: 240 seconds)
+T 1534712520 23*	frikinz (~me@unaffiliated/luser23) has joined
+T 1534712559 24*	wildermind has quit (Quit: Connection closed for inactivity)
+T 1534712606 23*	Naan (uid136399@gateway/web/irccloud.com/x-jbcjhhkzplyvmziv23) has joined
+T 1534712610 24*	28CoJaBo_ is now known as 18CoJaBo

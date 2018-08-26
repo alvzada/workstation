@@ -1,0 +1,187 @@
+**** BEGIN LOGGING AT Mon Aug 20 02:18:53 2018
+
+Aug 20 02:18:53 *	*** Looking up your hostname...
+Aug 20 02:18:53 *	*** Checking Ident
+Aug 20 02:18:53 *	*** Couldn't look up your hostname
+Aug 20 02:18:53 *	*** No Ident response
+Aug 20 02:18:53 *	Capabilities supported: account-notify extended-join identify-msg multi-prefix sasl
+Aug 20 02:18:53 *	Capabilities requested: account-notify extended-join identify-msg multi-prefix 
+Aug 20 02:18:54 *	Capabilities acknowledged: account-notify extended-join identify-msg multi-prefix 
+**** ENDING LOGGING AT Mon Aug 20 02:18:54 2018
+
+**** BEGIN LOGGING AT Mon Aug 20 02:18:54 2018
+
+Aug 20 02:18:54 *	Welcome to the freenode Internet Relay Chat Network fr0xk
+Aug 20 02:18:54 *	Your host is moon.freenode.net[2600:3c02::f03c:91ff:fe59:7d2e/6697], running version ircd-seven-1.1.7
+Aug 20 02:18:54 *	This server was created Sun May 20 2018 at 18:25:04 UTC
+Aug 20 02:18:54 *	moon.freenode.net ircd-seven-1.1.7 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+Aug 20 02:18:54 *	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 :are supported by this server
+Aug 20 02:18:54 *	CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 DEAF=D FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: EXTBAN=$,ajrxz CLIENTVER=3.0 CPRIVMSG CNOTICE WHOX :are supported by this server
+Aug 20 02:18:54 *	ETRACE KNOCK SAFELIST ELIST=CTU :are supported by this server
+Aug 20 02:18:54 *	There are 118 users and 82833 invisible on 34 servers
+Aug 20 02:18:54 *	35 :IRC Operators online
+Aug 20 02:18:54 *	4 :unknown connection(s)
+Aug 20 02:18:54 *	51360 :channels formed
+Aug 20 02:18:54 *	I have 4966 clients and 1 servers
+Aug 20 02:18:54 *	4966 5750 :Current local users 4966, max 5750
+Aug 20 02:18:54 *	82951 96067 :Current global users 82951, max 96067
+Aug 20 02:18:54 *	Highest connection count: 5751 (5750 clients) (418331 connections received)
+Aug 20 02:18:54 *	- moon.freenode.net Message of the Day - 
+Aug 20 02:18:54 *	- Welcome to moon.freenode.net in Atlanta, GA, US! Thanks to
+Aug 20 02:18:54 *	- Linode for sponsoring this server!
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- MOON, ELIZABETH (1945-) Born in South Texas, USA, 
+Aug 20 02:18:54 *	- Elizabeth Moon is an American science fiction and fantasy
+Aug 20 02:18:54 *	- author with over 20 published works. Her novel The Speed 
+Aug 20 02:18:54 *	- Of Dark received the Arthur C. Clarke and Nebula Awards in 2003
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- Welcome to freenode - supporting the free and open source
+Aug 20 02:18:54 *	- software communities since 1998.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- By connecting to freenode you indicate that you have read and
+Aug 20 02:18:54 *	- accept our policies and guidelines as set out on https://freenode.net
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- In the event that you observe behaviour that contravenes our policies,
+Aug 20 02:18:54 *	- please notify a volunteer staff member via private message, or send us an
+Aug 20 02:18:54 *	- e-mail to complaints@freenode.net -- we will do our best to address the
+Aug 20 02:18:54 *	- situation within a reasonable period of time, and we may request further
+Aug 20 02:18:54 *	- information or, as appropriate, involve other parties such as channel operators 
+Aug 20 02:18:54 *	- Group Contacts representing an on-topic group.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- freenode runs an open proxy scanner.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- If you are looking for assistance, you will be able to find a list of
+Aug 20 02:18:54 *	- volunteer staff using the '/who freenode/staff/*' command, and you may
+Aug 20 02:18:54 *	- message any of us at any time. Please note that freenode predominantly
+Aug 20 02:18:54 *	- provides assistance via private message, and while we have a network
+Aug 20 02:18:54 *	- channel the primary venue for support requests is via private message to
+Aug 20 02:18:54 *	- a member of the volunteer staff team.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- From time to time, volunteer staff may send server-wide notices relating to
+Aug 20 02:18:54 *	- the project, or the communities that we host. The majority of such notices
+Aug 20 02:18:54 *	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+Aug 20 02:18:54 *	- do not miss them. Important messages relating to the freenode project, including
+Aug 20 02:18:54 *	- notices of upcoming maintenance and other scheduled downtime will be issued as
+Aug 20 02:18:54 *	- global notices.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- Representing an on-topic project? Don't forget to register, more information
+Aug 20 02:18:54 *	- can be found on the https://freenode.net website under "Group Registration".
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- freenode organises an annual conference, and we would like to extend our
+Aug 20 02:18:54 *	- thanks to the attendees, exhibitors and speakers who made freenode #live 2017
+Aug 20 02:18:54 *	- possible. And of course, our generous sponsors: Bytemark, Canonical (Ubuntu),
+Aug 20 02:18:54 *	- Falanx Cyber Security, Private Internet Access and Yubico for footing the bill.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- Thank you also to our server sponsors for the sustained support in keeping the
+Aug 20 02:18:54 *	- network going for close to two decades.
+Aug 20 02:18:54 *	-  
+Aug 20 02:18:54 *	- freenode #live returns to Bristol, UK on November 3rd-4th 2018. Our Call for
+Aug 20 02:18:54 *	- Proposals is live at https://freenode.live and open until July 31, 2018. If 
+Aug 20 02:18:54 *	- you are interested in sponsoring this event, please send an e-mail to
+Aug 20 02:18:54 *	- sponsor@freenode.live
+Aug 20 02:18:55 *	-  
+Aug 20 02:18:55 *	- Thank you for using freenode!
+Aug 20 02:18:55 *	-  
+Aug 20 02:18:55 *	-  
+Aug 20 02:18:55 *	End of /MOTD command.
+Aug 20 02:18:55 *	fr0xk sets mode +R on fr0xk
+Aug 20 02:18:55 *	fr0xk sets mode +Z on fr0xk
+Aug 20 02:18:55 *	fr0xk sets mode +i on fr0xk
+Aug 20 02:18:55 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+Aug 20 02:18:55 *	Received a CTCP VERSION from freenode-connect
+Aug 20 02:18:55 -freenode-connect-	Due to the persistent ongoing spam, all new connections are being set +R (block messages from unidentified users) and will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+Aug 20 02:19:09 >nickserv<	identify ****
+Aug 20 02:19:10 -NickServ-	You are now identified for fr0xk.
+**** ENDING LOGGING AT Mon Aug 20 02:33:34 2018
+
+**** BEGIN LOGGING AT Mon Aug 20 02:34:17 2018
+
+Aug 20 02:34:17 *	Welcome to the freenode Internet Relay Chat Network fr0xk
+Aug 20 02:34:17 *	Your host is kornbluth.freenode.net[2001:1bc0:c1::6667/6697], running version ircd-seven-1.1.5
+Aug 20 02:34:17 *	This server was created Thu Dec 14 2017 at 20:19:44 UTC
+Aug 20 02:34:17 *	kornbluth.freenode.net ircd-seven-1.1.5 DOQRSZaghilopswz CFILMPQSbcefgijklmnopqrstvz bkloveqjfI
+Aug 20 02:34:17 *	CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQScgimnprstz CHANLIMIT=#:120 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=freenode KNOCK STATUSMSG=@+ CALLERID=g :are supported by this server
+Aug 20 02:34:17 *	CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=16 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:4,NOTICE:4,ACCEPT:,MONITOR: :are supported by this server
+Aug 20 02:34:17 *	EXTBAN=$,ajrxz WHOX CLIENTVER=3.0 SAFELIST ELIST=CTU :are supported by this server
+Aug 20 02:34:17 *	There are 118 users and 82725 invisible on 34 servers
+Aug 20 02:34:17 *	35 :IRC Operators online
+Aug 20 02:34:17 *	47 :unknown connection(s)
+Aug 20 02:34:17 *	51328 :channels formed
+Aug 20 02:34:17 *	I have 4996 clients and 1 servers
+Aug 20 02:34:17 *	4996 6083 :Current local users 4996, max 6083
+Aug 20 02:34:17 *	82843 96965 :Current global users 82843, max 96965
+Aug 20 02:34:17 *	Highest connection count: 6084 (6083 clients) (1728228 connections received)
+Aug 20 02:34:17 *	- kornbluth.freenode.net Message of the Day - 
+Aug 20 02:34:17 *	- Welcome to kornbluth.freenode.net in Frankfurt, DE, EU. 
+Aug 20 02:34:17 *	- Thanks to Probe Networks (www.probe-networks.de) for
+Aug 20 02:34:17 *	- sponsoring this server!
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- KORNBLUTH, CYRIL M. [1923-1958].  Born in New York City and
+Aug 20 02:34:17 *	- an active member of the Futurians, Cyril Kornbluth sold his
+Aug 20 02:34:17 *	- first story professionally at age 15.  By the 1940's his
+Aug 20 02:34:17 *	- stories appeared widely under several pennames, including
+Aug 20 02:34:17 *	- S.D. Gottesman and Cecil Corman.  He left his university
+Aug 20 02:34:17 *	- studies in Chicago to serve in the Army in Europe during
+Aug 20 02:34:17 *	- WWII, then returned to school and work in Chicago until he
+Aug 20 02:34:17 *	- began writing full-time in 1951.  The author of The Marching
+Aug 20 02:34:17 *	- Morons and the novels The Space Merchants (with Frederik
+Aug 20 02:34:17 *	- Pohl) and The Syndic, he's best known for his biting social
+Aug 20 02:34:17 *	- satire and his collaborations with Pohl and with Judith
+Aug 20 02:34:17 *	- Merril.
+Aug 20 02:34:17 *	- Welcome to freenode - supporting the free and open source
+Aug 20 02:34:17 *	- software communities since 1998.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- By connecting to freenode you indicate that you have read and
+Aug 20 02:34:17 *	- accept our policies and guidelines as set out on https://freenode.net
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- In the event that you observe behaviour that contravenes our policies,
+Aug 20 02:34:17 *	- please notify a volunteer staff member via private message, or send us an
+Aug 20 02:34:17 *	- e-mail to complaints@freenode.net -- we will do our best to address the
+Aug 20 02:34:17 *	- situation within a reasonable period of time, and we may request further
+Aug 20 02:34:17 *	- information or, as appropriate, involve other parties such as channel operators 
+Aug 20 02:34:17 *	- Group Contacts representing an on-topic group.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- freenode runs an open proxy scanner.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- If you are looking for assistance, you will be able to find a list of
+Aug 20 02:34:17 *	- volunteer staff using the '/who freenode/staff/*' command, and you may
+Aug 20 02:34:17 *	- message any of us at any time. Please note that freenode predominantly
+Aug 20 02:34:17 *	- provides assistance via private message, and while we have a network
+Aug 20 02:34:17 *	- channel the primary venue for support requests is via private message to
+Aug 20 02:34:17 *	- a member of the volunteer staff team.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- From time to time, volunteer staff may send server-wide notices relating to
+Aug 20 02:34:17 *	- the project, or the communities that we host. The majority of such notices
+Aug 20 02:34:17 *	- will be sent as wallops, and you can '/mode <yournick> +w' to ensure that you
+Aug 20 02:34:17 *	- do not miss them. Important messages relating to the freenode project, including
+Aug 20 02:34:17 *	- notices of upcoming maintenance and other scheduled downtime will be issued as
+Aug 20 02:34:17 *	- global notices.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- Representing an on-topic project? Don't forget to register, more information
+Aug 20 02:34:17 *	- can be found on the https://freenode.net website under "Group Registration".
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- freenode organises an annual conference, and we would like to extend our
+Aug 20 02:34:17 *	- thanks to the attendees, exhibitors and speakers who made freenode #live 2017
+Aug 20 02:34:17 *	- possible. And of course, our generous sponsors: Bytemark, Canonical (Ubuntu),
+Aug 20 02:34:17 *	- Falanx Cyber Security, Private Internet Access and Yubico for footing the bill.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- Thank you also to our server sponsors for the sustained support in keeping the
+Aug 20 02:34:17 *	- network going for close to two decades.
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- freenode #live returns to Bristol, UK on November 3rd-4th 2018. Our Call for
+Aug 20 02:34:17 *	- Proposals is live at https://freenode.live and open until July 31, 2018. If 
+Aug 20 02:34:17 *	- you are interested in sponsoring this event, please send an e-mail to
+Aug 20 02:34:17 *	- sponsor@freenode.live
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	- Thank you for using freenode!
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	-  
+Aug 20 02:34:17 *	End of /MOTD command.
+Aug 20 02:34:17 *	fr0xk sets mode +R on fr0xk
+Aug 20 02:34:17 *	fr0xk sets mode +Z on fr0xk
+Aug 20 02:34:17 *	fr0xk sets mode +i on fr0xk
+Aug 20 02:34:17 -NickServ-	This nickname is registered. Please choose a different nickname, or identify via /msg NickServ identify <password>.
+Aug 20 02:34:18 *	Received a CTCP VERSION from freenode-connect
+Aug 20 02:34:18 -freenode-connect-	Due to the persistent ongoing spam, all new connections are being set +R (block messages from unidentified users) and will be scanned for vulnerabilities. This will not harm your computer, and vulnerable hosts will be notified.
+Aug 20 02:34:38 >nickserv<	identify ****
+Aug 20 02:34:39 -NickServ-	You are now identified for fr0xk.

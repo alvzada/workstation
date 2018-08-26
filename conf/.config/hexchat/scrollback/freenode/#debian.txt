@@ -1,0 +1,21 @@
+T 1534711778 19*	Now talking on 22#debian
+T 1534711778 22*	Topic for 22#debian is: Debian Stretch: /msg dpkg stretch ; /msg dpkg 9.5 ; /msg dpkg jessie->stretch ; /msg dpkg install stretch | Oldstable: Debian Jessie /msg dpkg jessie ; /msg dpkg 8.11 | NO FLOOD: /msg dpkg paste | /msg bots NOT people | offtopic: #debian-offtopic | testing, unstable: #debian-next @ irc.oftc.net | chanlogs: /msg dpkg irclog
+T 1534711778 22*	Topic for 22#debian set by 26jelly!jelly@pdpc/supporter/active/jelly (24Thu Jul 19 16:37:38 2018)
+T 1534711778 -18ChanServ-	[#debian] Welcome to #Debian. This is a discussion channel; if you have a question about Debian GNU/Linux, ask and we will try our best to answer it. Newcomers should read the channel's guidelines by typing "/msg dpkg guidelines". Please do not paste in the channel; use #flood instead. Thank you.
+T 1534711778 22*	Channel 22#debian url: 24http://www.debian.org
+T 1534711876 24*	ompaul has quit (Quit: and zebedee said its time for other stuff)
+T 1534711877 24*	[Awaxx] has quit (Quit: unmap'd that dirty pin.)
+T 1534711878 18<jasabella18>	any ideas why \w in PS1 is expanding to . in bash?
+T 1534711919 24*	nibble_zero has quit (Quit: nibble_zero)
+T 1534711919 23*	Sizesu (~cerberus@dslb-002-203-011-119.002.203.pools.vodafone-ip.de23) has joined
+T 1534711923 24*	Ericounet has quit (Quit: Je m'en vais ...)
+T 1534711937 24*	tomboy64 has quit (Remote host closed the connection)
+T 1534711979 23*	sorko999 (~sorko999@2001:41d0:302:2000::1a6723) has joined
+T 1534712080 23*	greatgatsby (~greatgats@xplr-104-249-255-28.xplornet.com23) has joined
+T 1534712237 23*	mandeep (~mandeep@unaffiliated/mandeepb23) has joined
+T 1534712276 24*	jfoy has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+T 1534712321 24*	jarfr has quit (Quit: Leaving)
+T 1534712407 24*	xalen has quit (Quit: Leaving)
+T 1534712438 24*	mandeep has quit (Client Quit)
+T 1534712491 23*	mandeep (mandeep@gateway/vpn/privateinternetaccess/mandeepb23) has joined
+T 1534712492 23*	n4dir (~n4dir@mue-88-130-56-238.dsl.tropolys.de23) has joined

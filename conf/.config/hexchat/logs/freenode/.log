@@ -1,0 +1,16 @@
+**** BEGIN LOGGING AT Mon Aug 20 02:18:50 2018
+
+Aug 20 02:18:50 *	Connecting to chat.freenode.net (2600:3c02::f03c:91ff:fe59:7d2e:6697)
+Aug 20 02:18:53 *	* Certification info:
+Aug 20 02:18:53 *	  Subject:
+Aug 20 02:18:53 *	    CN=moon.freenode.net
+Aug 20 02:18:53 *	  Issuer:
+Aug 20 02:18:53 *	    C=US
+Aug 20 02:18:53 *	    O=Let's Encrypt
+Aug 20 02:18:53 *	    CN=Let's Encrypt Authority X3
+Aug 20 02:18:53 *	  Public key algorithm: rsaEncryption (4096 bits)
+Aug 20 02:18:53 *	  Sign algorithm sha256WithRSAEncryption
+Aug 20 02:18:53 *	  Valid since Jul 20 17:47:51 2018 GM to Oct 18 17:47:51 2018 GM
+Aug 20 02:18:53 *	* Cipher info:
+Aug 20 02:18:53 *	  Version: TLSv1.2, cipher ECDHE-RSA-AES256-GCM-SHA384 (256 bits)
+Aug 20 02:18:53 *	Connected. Now logging in.

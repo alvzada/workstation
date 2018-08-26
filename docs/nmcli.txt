@@ -1,0 +1,12 @@
+1. NetworkManagement(nmcli):
+
+- List ESSIDs
+$ nmcli device wifi
+
+- Connect to an ESSID
+$ nmcli dev wifi connect "essid" password "password"
+// After first connection setup, simply:
+$ nmcli device connect wlp0s26u1u1
+
+- Disconnect
+$ nmcli connection down ESSID/Device

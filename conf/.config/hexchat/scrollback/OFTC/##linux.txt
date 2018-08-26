@@ -1,0 +1,4 @@
+T 1534711675 19*	Now talking on 22##linux
+T 1534711675 22*	Topic for 22##linux is: Linux help and discussion; FREE for all, not just a few. Don't ask to ask, just ask. :) PeterFA is NOT naked.  
+T 1534711675 22*	Topic for 22##linux set by 26ChanServ!services@services.oftc.net (24Tue Jul  3 06:13:54 2018)
+T 1534711722 20*	Disconnected (20)

@@ -1,0 +1,29 @@
+**** BEGIN LOGGING AT Mon Aug 20 02:18:50 2018
+
+Aug 20 02:18:50 *	Looking up chat.freenode.net
+**** BEGIN LOGGING AT Mon Aug 20 02:34:12 2018
+
+Aug 20 02:34:12 *	Looking up chat.freenode.net
+Aug 20 02:34:13 *	Connecting to chat.freenode.net (2001:1bc0:c1::6667:6697)
+Aug 20 02:34:16 *	* Certification info:
+Aug 20 02:34:16 *	  Subject:
+Aug 20 02:34:16 *	    CN=kornbluth.freenode.net
+Aug 20 02:34:16 *	  Issuer:
+Aug 20 02:34:16 *	    C=US
+Aug 20 02:34:16 *	    O=Let's Encrypt
+Aug 20 02:34:16 *	    CN=Let's Encrypt Authority X3
+Aug 20 02:34:16 *	  Public key algorithm: rsaEncryption (4096 bits)
+Aug 20 02:34:16 *	  Sign algorithm sha256WithRSAEncryption
+Aug 20 02:34:16 *	  Valid since Jul 18 17:25:44 2018 GM to Oct 16 17:25:44 2018 GM
+Aug 20 02:34:16 *	* Cipher info:
+Aug 20 02:34:16 *	  Version: TLSv1.2, cipher ECDHE-RSA-AES256-GCM-SHA384 (256 bits)
+Aug 20 02:34:16 *	Connected. Now logging in.
+Aug 20 02:34:16 *	*** Looking up your hostname...
+Aug 20 02:34:16 *	*** Checking Ident
+Aug 20 02:34:16 *	*** Couldn't look up your hostname
+Aug 20 02:34:16 *	*** No Ident response
+Aug 20 02:34:16 *	Capabilities supported: account-notify extended-join identify-msg multi-prefix sasl
+Aug 20 02:34:16 *	Capabilities requested: account-notify extended-join identify-msg multi-prefix 
+Aug 20 02:34:17 *	Capabilities acknowledged: account-notify extended-join identify-msg multi-prefix 
+**** ENDING LOGGING AT Mon Aug 20 02:34:17 2018
+

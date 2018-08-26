@@ -1,0 +1,25 @@
+**** BEGIN LOGGING AT Mon Aug 20 02:19:38 2018
+
+Aug 20 02:19:38 *	Now talking on #debian
+Aug 20 02:19:38 *	Topic for #debian is: Debian Stretch: /msg dpkg stretch ; /msg dpkg 9.5 ; /msg dpkg jessie->stretch ; /msg dpkg install stretch | Oldstable: Debian Jessie /msg dpkg jessie ; /msg dpkg 8.11 | NO FLOOD: /msg dpkg paste | /msg bots NOT people | offtopic: #debian-offtopic | testing, unstable: #debian-next @ irc.oftc.net | chanlogs: /msg dpkg irclog
+Aug 20 02:19:38 *	Topic for #debian set by jelly!jelly@pdpc/supporter/active/jelly (Thu Jul 19 16:37:38 2018)
+Aug 20 02:19:38 -ChanServ-	[#debian] Welcome to #Debian. This is a discussion channel; if you have a question about Debian GNU/Linux, ask and we will try our best to answer it. Newcomers should read the channel's guidelines by typing "/msg dpkg guidelines". Please do not paste in the channel; use #flood instead. Thank you.
+Aug 20 02:19:38 *	Channel #debian url: http://www.debian.org
+Aug 20 02:21:16 *	ompaul has quit (Quit: and zebedee said its time for other stuff)
+Aug 20 02:21:17 *	[Awaxx] has quit (Quit: unmap'd that dirty pin.)
+Aug 20 02:21:18 <jasabella>	any ideas why \w in PS1 is expanding to . in bash?
+Aug 20 02:21:59 *	nibble_zero has quit (Quit: nibble_zero)
+Aug 20 02:21:59 *	Sizesu (~cerberus@dslb-002-203-011-119.002.203.pools.vodafone-ip.de) has joined
+Aug 20 02:22:03 *	Ericounet has quit (Quit: Je m'en vais ...)
+Aug 20 02:22:17 *	tomboy64 has quit (Remote host closed the connection)
+Aug 20 02:22:59 *	sorko999 (~sorko999@2001:41d0:302:2000::1a67) has joined
+Aug 20 02:24:40 *	greatgatsby (~greatgats@xplr-104-249-255-28.xplornet.com) has joined
+Aug 20 02:27:17 *	mandeep (~mandeep@unaffiliated/mandeepb) has joined
+Aug 20 02:27:56 *	jfoy has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+Aug 20 02:28:41 *	jarfr has quit (Quit: Leaving)
+Aug 20 02:30:07 *	xalen has quit (Quit: Leaving)
+Aug 20 02:30:38 *	mandeep has quit (Client Quit)
+Aug 20 02:31:31 *	mandeep (mandeep@gateway/vpn/privateinternetaccess/mandeepb) has joined
+Aug 20 02:31:32 *	n4dir (~n4dir@mue-88-130-56-238.dsl.tropolys.de) has joined
+**** ENDING LOGGING AT Mon Aug 20 02:33:34 2018
+

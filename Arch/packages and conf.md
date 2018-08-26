@@ -20,7 +20,6 @@ $ sudo pacman -S \
     thunar \
     pulseaudio-alsa \
     alsa-utils
-    
 ```
 - **Setting up essential tools**
 
@@ -31,6 +30,18 @@ $ sudo pacman -S \
     dmenu \
     xorg\
     xorg-xinit \
+    xf86-input-keyboard \
+    xf86-input-libinput \
+    xf86-input-mouse \
+    xf86-input-wacom \
+    xf86-input-vmmouse \
+    xf86-video-amdgpu \
+    xf86-video-ati \
+    xf86-video-fbdev \
+    xf86-video-nouveau \
+    xf86-video-openchrome \
+    xf86-video-vmware \
+    xf86-video-voodoo \
     w3m \
     irssi \
     xdg-user-dirs \

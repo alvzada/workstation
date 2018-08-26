@@ -1,0 +1,9 @@
+# GIMP action-history
+
+(history-item "script-fu-drop-shadow" 0)
+(history-item "dialogs-preferences" 0)
+(history-item "image-flatten" 0)
+(history-item "file-overwrite" 0)
+(history-item "file-quit" 1)
+
+# end of action-history

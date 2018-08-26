@@ -219,8 +219,12 @@ bar {
     }
 }
 
-# set your wallpaper
+# Set your wallpaper
 exec --no-startup-id feh --bg-scale /home/$USER/.config/i3/wallpaper/buildings.jpg
+
+# Notification daemon startup
+exec --no-startup-id systemctl --user import-environment DISPLAY XAUTHORITY
+exec --no-startup-id systemctl --user set-environment DISPLAY=:0
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+

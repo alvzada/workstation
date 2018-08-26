@@ -1,6 +1,6 @@
 " General Config
-let $VIM         = "$HOME"
-let $VIMRUNTIME  = "~/.vim/runtime"
+"let $VIM         = "$HOME"
+"let $VIMRUNTIME  = "~/.vim/runtime"
 set runtimepath^=$VIMRUNTIME
 set helpfile=~/.vim/runtime/doc/help.txt
 set number

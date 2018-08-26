@@ -144,6 +144,8 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+bindsym $mod+Prior workspace prev # Prior = PageUP
+bindsym $mod+Next workspace next  # Next = PageDown
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -200,11 +202,11 @@ bar {
 
     bindsym button4 nop
     bindsym button5 nop
-    font xft:Roboto 9
+    font xft:Sans 10
     strip_workspace_numbers yes
 
     colors {
-	background #283339
+	background #263238
         statusline #F9FAF9
         separator  #454947
 
@@ -218,7 +220,7 @@ bar {
 }
 
 # set your wallpaper
-exec --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper/water-lake.png
+exec --no-startup-id feh --bg-scale /home/$USER/.config/i3/wallpaper/buildings.jpg
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+

@@ -4,3 +4,5 @@
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
+
+export QT_QPA_PLATFORMTHEM=gtk2

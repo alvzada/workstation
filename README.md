@@ -1,7 +1,7 @@
 ﻿# Desktop
 
 ![i3](/images/i3-wm.png)
-![Xfce](/images/xfce4.png)
+![i3](/images/Focus.png)
 
 # Setup (Debian)
 

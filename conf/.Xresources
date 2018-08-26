@@ -4,6 +4,8 @@ Xft.antialias: 1
 Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.dpi: 96
+!! Xft.dpi: 220 // HiDPI
+!! Also execute xrandr --dpi 220
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
